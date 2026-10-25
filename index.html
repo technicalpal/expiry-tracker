@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Expiry Tracker</title>
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#6366f1"><link rel="apple-touch-icon" href="icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Expiry">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <style>
 :root{--bg:#f4f5fb;--card:rgba(255,255,255,.86);--text:#0b1020;--mute:#5b6785;--line:rgba(15,23,60,.09);--soft:rgba(99,102,241,.08);--acc:#6366f1;--red:#f43f5e;--amb:#f97316;--yel:#eab308;--grn:#10b981;--sh:0 1px 2px rgba(15,23,60,.04),0 12px 32px rgba(70,70,160,.10);--g:linear-gradient(135deg,#6366f1,#8b5cf6 55%,#ec4899);--b1:#c7d2fe;--b2:#fbcfe8;--b3:#a5f3fc;color-scheme:light}
@@ -87,6 +88,37 @@ html{-webkit-text-size-adjust:100%}body{min-height:100vh;min-height:100dvh}
 .item{grid-template-columns:auto 1fr}.item .badge{grid-column:2;justify-self:start}
 .modal{align-items:end;padding:0}.mc{max-width:none;border-radius:26px 26px 0 0;padding:20px 18px calc(18px + env(safe-area-inset-bottom))}
 .fm{grid-template-columns:1fr}input,select{font-size:16px}.ac{padding:26px 18px}}
+html,body{max-width:100%;overflow-x:hidden}
+.top>*,.kpis>*,.charts>*,.grid2>*,.item>*,.fm>*{min-width:0}
+.usr{cursor:pointer;color:var(--text);font:inherit}.chip{display:inline-flex;align-items:center;gap:6px}.ce{font-weight:400}
+.install{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px 16px;margin-bottom:14px;font-size:13.5px;animation:up .5s both}
+.bnav{display:none}.phd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.phd h2{margin:0}
+.pcard{display:flex;gap:14px;align-items:center;padding:14px;border-radius:18px;background:var(--soft);margin-bottom:6px}
+.av.big{width:54px;height:54px;font-size:22px;flex:none}.pname{font-weight:800;font-size:16px;overflow-wrap:anywhere}.pmail{font-size:12.5px;color:var(--mute);overflow-wrap:anywhere}
+.psec{margin:14px 0;font-size:13.5px}.psec h3{margin:0 0 8px;font-size:14px;font-weight:800}.psec input{margin-bottom:8px}.prow{display:flex;gap:8px}.prow input{margin:0}
+.srow{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-weight:700}
+@media(max-width:820px){
+.dsk,.addb,.sync em,.usr span{display:none}
+.wrap{padding:0 12px}
+.top{padding:10px 0;gap:8px;flex-wrap:nowrap}.top .lg{width:38px;height:38px;font-size:19px;border-radius:12px;flex:none}.top h1{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top .btn{padding:8px 13px;font-size:13px;flex:none}.top .ib{flex:none}.usr{padding:3px;flex:none}.sync{padding:8px;flex:none}
+.hi h2{font-size:21px}.hi p{margin:0 0 12px;font-size:13px}
+.guest{font-size:12.5px;padding:10px 12px}
+.kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.kpi{padding:12px;border-radius:18px}.kpi b{font-size:26px;margin-top:6px}.kpi .ki{width:34px;height:34px;font-size:17px;border-radius:10px}.kpi span{font-size:12px}
+.charts,.grid2{grid-template-columns:minmax(0,1fr)}.ch{padding:14px}
+.chips{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;overflow:visible;padding:0;margin-bottom:10px}
+.chip{flex-direction:column;justify-content:center;gap:1px;padding:7px 2px 6px;border-radius:14px;font-size:10.5px;line-height:1.2;min-width:0}
+.chip .ce{font-size:19px;line-height:1.1}.chip span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;justify-content:space-around;align-items:flex-end;padding:6px 10px calc(8px + env(safe-area-inset-bottom));background:var(--card);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-top:1px solid var(--line)}
+.bnav button{flex:1;border:0;background:none;color:var(--mute);font:inherit;font-size:11px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:1px;padding:4px 0;cursor:pointer}
+.bnav button b{font-size:21px;font-weight:400}
+.bnav .nadd{flex:none;width:56px;height:56px;border-radius:50%;background:var(--g);box-shadow:0 8px 20px rgba(99,102,241,.5);margin-top:-24px;justify-content:center;padding:0}.nadd b{font-size:30px;color:#fff}
+.modal{align-items:flex-end;padding:0}.mc{max-width:none;max-height:88vh;max-height:88dvh;border-radius:26px 26px 0 0;padding:18px 16px calc(16px + env(safe-area-inset-bottom))}
+.fm{grid-template-columns:minmax(0,1fr)}
+.item{grid-template-columns:auto minmax(0,1fr);padding:12px;gap:6px 11px}.item .badge{grid-column:2;justify-self:start}.ico{width:44px;height:44px;font-size:22px;border-radius:13px}
+.foot{flex-wrap:wrap;gap:6px}.sechd{flex-wrap:wrap}
+input,select{font-size:16px}
+#toast{bottom:calc(92px + env(safe-area-inset-bottom));max-width:90vw;text-align:center}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -113,10 +145,11 @@ html{-webkit-text-size-adjust:100%}body{min-height:100vh;min-height:100dvh}
   <div class="top">
     <div class="lg">🛡️</div><h1>Expiry Tracker</h1>
     <span class="sync" id="sync"><i></i><em id="syncT" style="font-style:normal">Connecting</em></span>
-    <button class="ghost langb">हिंदी</button><button class="ib" id="snd" title="Sound">🔊</button><button class="ib" id="theme" title="Theme">🌗</button>
-    <button class="btn" id="loginBtn" data-t="loginBtn">🔐 Login / Sign up</button><div class="usr" id="usr" hidden><div class="av" id="av">L</div><span id="uname"></span><button class="ghost" id="out" data-t="signout">Sign out</button></div>
+    <button class="ghost langb dsk">हिंदी</button><button class="ib dsk" id="snd" title="Sound">🔊</button><button class="ib dsk" id="theme" title="Theme">🌗</button>
+    <button class="btn" id="loginBtn" data-t="loginH">🔐 Login</button><button class="usr" id="usr" hidden title="Profile"><div class="av" id="av">L</div><span id="uname"></span></button><button class="ib" id="gear" title="Settings">⚙️</button>
     <button class="btn addb" id="addBtn" data-t="add">＋ Add item</button>
   </div>
+  <div class="install glass" id="install" hidden><span>📲 <b data-t="instT">Install app</b> · <span id="instD"></span></span><span class="acts"><button class="btn" id="instBtn" data-t="instB">Install</button><button class="ghost" id="instX">✕</button></span></div>
   <div class="hi"><h2 id="hi"></h2><p id="hs"></p></div>
   <div class="guest glass" id="guest"><span data-t="gmsg"></span> <button class="lnk" id="gl" data-t="loginBtn"></button></div>
   <div id="banner" class="banner"></div>
@@ -136,9 +169,9 @@ html{-webkit-text-size-adjust:100%}body{min-height:100vh;min-height:100dvh}
   <div class="chips" id="chips"></div>
   <div class="sechd"><h2 class="sec" data-t="items">📋 Your items</h2><div class="acts"><button class="ghost" id="xl" data-t="xl">📊 Excel</button><button class="ghost" id="pdf" data-t="pdf">📄 PDF</button></div></div>
   <div class="grid2" id="list"></div>
-  <div style="height:90px"></div>
+  <div style="height:110px"></div>
 </div>
-<button class="fab" id="fab">＋</button>
+<nav class="bnav"><button id="nHome"><b>🏠</b><span data-t="nHome">Home</span></button><button class="nadd" id="navAdd" aria-label="Add"><b>＋</b></button><button id="nMe"><b>👤</b><span data-t="nMe">Profile</span></button></nav>
 <div class="modal" id="modal"><div class="mc glass">
   <h2 id="mt">Add new item</h2>
   <div class="fm">
@@ -150,6 +183,29 @@ html{-webkit-text-size-adjust:100%}body{min-height:100vh;min-height:100dvh}
     <div class="fw msg e" id="err"></div>
     <div class="fw sticky" style="display:flex;gap:8px"><button class="btn" id="save" style="flex:1">Add item</button><button class="ghost" id="cancel" data-t="cancel">Cancel</button></div>
   </div></div></div>
+<div class="modal" id="pm"><div class="mc glass">
+  <div class="phd"><h2 data-t="pTitle">Profile & Settings</h2><button class="ghost" id="pClose">✕</button></div>
+  <div id="pAcc" hidden>
+    <div class="pcard"><div class="av big" id="pav">G</div><div style="min-width:0"><div class="pname" id="pName"></div><div class="pmail" id="pMail"></div><div class="pmail" id="pProv"></div></div></div>
+    <div class="psec"><h3 data-t="pEdit">Display name</h3><div class="prow"><input id="pDn" data-p="pDnP" placeholder="Your name"><button class="btn" id="pDnS" data-t="pSave">Save</button></div></div>
+    <div class="psec" id="pwBox"><h3 data-t="pPw">Change password</h3>
+      <input id="pwOld" type="password" autocomplete="current-password" data-p="pOld" placeholder="Current password">
+      <input id="pwNew" type="password" autocomplete="new-password" data-p="pNew" placeholder="New password (min 6)">
+      <input id="pwNew2" type="password" autocomplete="new-password" data-p="pNew2" placeholder="Confirm new password">
+      <button class="btn" id="pwSave" data-t="pUpd" style="width:100%">Update password</button>
+      <div style="text-align:center;margin-top:8px"><button class="lnk" id="pwReset" data-t="pReset">Forgot current password? Email me a reset link</button></div></div>
+    <div class="psec" id="gNote" hidden data-t="pGoog">You signed in with Google, so your password is managed by your Google account.</div>
+    <div class="msg" id="pMsg"></div>
+  </div>
+  <div class="psec" id="pGuest" hidden><p data-t="pGuestT">You are in guest mode. Login to save your items online and use them on any device.</p><button class="btn" id="pLogin" data-t="loginBtn" style="width:100%">Login / Sign up</button></div>
+  <div class="psec"><h3 data-t="pSet">Settings</h3>
+    <div class="srow"><span data-t="pLang">Language</span><button class="ghost langb">हिंदी</button></div>
+    <div class="srow"><span data-t="pTheme">Theme</span><button class="ghost" id="stTheme">🌗</button></div>
+    <div class="srow"><span data-t="pSnd">Sound</span><button class="ghost" id="stSnd">🔊</button></div>
+    <div class="srow"><span data-t="pInst">Install app</span><button class="ghost" id="stInst" data-t="instB">Install</button></div>
+  </div>
+  <button class="ghost dg" id="out" hidden data-t="signout" style="width:100%;margin-top:8px;padding:11px">Sign out</button>
+</div></div>
 <div id="toast"></div>
 </div>
 
@@ -168,20 +224,20 @@ var COL={red:"#f43f5e",amb:"#f97316",yel:"#eab308",ok:"#10b981"};
 var GK="expiry-tracker-v2",KEY=GK,items=[],sf="all",cf="All",editId=null,ref=null,pend=null,shown={},auth=null,mode="in";
 function $(i){return document.getElementById(i)}
 var who="",lang="en",snd=true;try{lang=localStorage.getItem("lang")||"en";snd=localStorage.getItem("snd")!=="0"}catch(e){}
-var CATH={All:"सभी",Medicine:"दवाई",Food:"खाना",Cosmetics:"कॉस्मेटिक",Home:"घर",Baby:"बच्चा",Pet:"पालतू",Electronics:"इलेक्ट्रॉनिक्स",Document:"दस्तावेज़",Other:"अन्य"};
-var D={en:{tag:"Never let medicines, food or essentials expire again.",login:"Login",signup:"Sign up",google:"Continue with Google",or:"or use email",email:"Email",pass:"Password",ph6:"At least 6 characters",forgot:"Forgot password?",signout:"Sign out",add:"＋ Add item",kAll:"All items",kRed:"Expired",kAmb:"Within 7 days",kSafe:"Safe",c1:"🍩 Status overview",c2:"📊 Expiring in next 6 months",c3:"🏷️ By category",search:"Search by name or location",soon:"Soonest first",late:"Latest first",az:"Name A-Z",items:"📋 Your items",xl:"📊 Excel",pdf:"📄 PDF",lName:"✏️ Item name",lCat:"🏷️ Category",lDate:"📅 Expiry date",lAlert:"🔔 Alert (days before)",lNote:"📍 Location / note",pName:"e.g. Paracetamol 500mg, Amul Butter",pNote:"Kitchen shelf",save:"Add item",saveEdit:"Save changes",cancel:"Cancel",mtAdd:"Add new item",mtEdit:"Edit item",edit:"Edit",del:"Delete",conf:"Confirm?",noMatch:"No items match your filters.",noItems:"Nothing tracked yet. Add your first item, or see how it looks with samples.",demo:"✨ Load sample items",tAdd:"Item added 🎉",tUp:"Item updated ✅",tDel:"Item deleted 🗑️",req:"Name and expiry date are required.",bRed:"⚠️  {c} item(s) expired. Please stop using and dispose of safely.",bAmb:"⏰  {c} item(s) expire within 7 days.",bOk:"🎉  Everything looks fresh and safe!",gm:"Good morning ☀️",ga:"Good afternoon 🌤️",ge:"Good evening 🌙",attn:"need attention",lExp:"Expired",lAmb:"≤ 7 days",lYel:"Upcoming",lOk:"Good",over:"Overdue",mons:"Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec",exp:"❌ Expired {n}d ago",today:"🚨 Expires today",left:"{n} days left",s_cloud:"Cloud sync on",s_save:"Saving",s_err:"Sync error",s_wait:"Connecting",setup:"⚙️ Setup pending: open firebase-config.js, paste your Firebase config, then redeploy.",syncErr:"Could not save to cloud. Check Firestore rules.",newq:"New here?",haveq:"Already have an account?",gmsg:"👤 Guest mode: your items are saved in this browser. Login to back them up online and open them on any device.",loginBtn:"🔐 Login / Sign up",skip:"Continue as guest",tMerge:"Your items are now saved to your account ☁️",s_guest:"Guest mode",st_red:"Expired",st_amb:"Within 7 days",st_yel:"Upcoming",st_ok:"Good",hName:"Item",hCat:"Category",hNote:"Location / Note",hDate:"Expiry date",hDays:"Days left",hStatus:"Status",noData:"Add some items first",done:"Report downloaded ✅",pdfErr:"PDF could not be created",rTitle:"Expiry Report",rGen:"Generated"},
-hi:{tag:"दवाइयाँ, खाना या ज़रूरी सामान कभी एक्सपायर न होने दें।",login:"लॉगिन",signup:"साइन अप",google:"Google से जारी रखें",or:"या ईमेल से",email:"ईमेल",pass:"पासवर्ड",ph6:"कम से कम 6 अक्षर",forgot:"पासवर्ड भूल गए?",signout:"साइन आउट",add:"＋ आइटम जोड़ें",kAll:"सभी आइटम",kRed:"एक्सपायर",kAmb:"7 दिन में",kSafe:"सुरक्षित",c1:"🍩 स्थिति सारांश",c2:"📊 अगले 6 महीनों में एक्सपायरी",c3:"🏷️ श्रेणी अनुसार",search:"नाम या जगह से खोजें",soon:"जल्दी वाले पहले",late:"देर वाले पहले",az:"नाम A-Z",items:"📋 आपके आइटम",xl:"📊 एक्सेल",pdf:"📄 पीडीएफ",lName:"✏️ आइटम का नाम",lCat:"🏷️ श्रेणी",lDate:"📅 एक्सपायरी तारीख",lAlert:"🔔 अलर्ट (कितने दिन पहले)",lNote:"📍 जगह / नोट",pName:"जैसे पैरासिटामोल 500mg, अमूल बटर",pNote:"रसोई की अलमारी",save:"आइटम जोड़ें",saveEdit:"बदलाव सहेजें",cancel:"रद्द करें",mtAdd:"नया आइटम जोड़ें",mtEdit:"आइटम बदलें",edit:"बदलें",del:"हटाएं",conf:"पक्का?",noMatch:"फ़िल्टर से कोई आइटम नहीं मिला।",noItems:"अभी कुछ नहीं जोड़ा। पहला आइटम जोड़ें या सैंपल देखें।",demo:"✨ सैंपल आइटम लोड करें",tAdd:"आइटम जुड़ गया 🎉",tUp:"आइटम अपडेट हुआ ✅",tDel:"आइटम हट गया 🗑️",req:"नाम और एक्सपायरी तारीख ज़रूरी है।",bRed:"⚠️  {c} आइटम एक्सपायर हो चुके हैं। इस्तेमाल बंद करें और सुरक्षित तरीके से फेंकें।",bAmb:"⏰  {c} आइटम 7 दिन में एक्सपायर होंगे।",bOk:"🎉  सब कुछ ताज़ा और सुरक्षित है!",gm:"सुप्रभात ☀️",ga:"नमस्कार 🌤️",ge:"शुभ संध्या 🌙",attn:"पर ध्यान दें",lExp:"एक्सपायर",lAmb:"≤ 7 दिन",lYel:"जल्द",lOk:"ठीक",over:"बीत चुके",mons:"जन,फ़र,मार्च,अप्रै,मई,जून,जुल,अग,सित,अक्टू,नव,दिस",exp:"❌ {n} दिन पहले एक्सपायर",today:"🚨 आज एक्सपायर",left:"{n} दिन बाकी",s_cloud:"क्लाउड सिंक चालू",s_save:"सहेज रहे हैं",s_err:"सिंक में दिक्कत",s_wait:"कनेक्ट हो रहा है",setup:"⚙️ सेटअप बाकी है: firebase-config.js खोलकर अपनी Firebase config डालें, फिर दोबारा deploy करें।",syncErr:"क्लाउड में सेव नहीं हुआ। Firestore rules जांचें।",newq:"नए हैं?",haveq:"पहले से अकाउंट है?",gmsg:"👤 गेस्ट मोड: आपके आइटम इसी ब्राउज़र में सेव हैं। ऑनलाइन बैकअप और किसी भी डिवाइस पर देखने के लिए लॉगिन करें।",loginBtn:"🔐 लॉगिन / साइन अप",skip:"गेस्ट के रूप में जारी रखें",tMerge:"आपके आइटम अब आपके अकाउंट में सेव हो गए ☁️",s_guest:"गेस्ट मोड",st_red:"एक्सपायर",st_amb:"7 दिन में",st_yel:"जल्द",st_ok:"ठीक",hName:"आइटम",hCat:"श्रेणी",hNote:"जगह / नोट",hDate:"एक्सपायरी तारीख",hDays:"बचे दिन",hStatus:"स्थिति",noData:"पहले कुछ आइटम जोड़ें",done:"रिपोर्ट डाउनलोड हो गई ✅",pdfErr:"PDF नहीं बन सका",rTitle:"एक्सपायरी रिपोर्ट",rGen:"तारीख"}};
+var CATH={All:"सभी",Medicine:"दवाई",Food:"खाना",Cosmetics:"कॉस्मेटिक",Home:"घर",Baby:"बच्चा",Pet:"पालतू",Electronics:"गैजेट",Document:"दस्तावेज़",Other:"अन्य"};
+var D={en:{loginH:"🔐 Login",nHome:"Home",nMe:"Profile",pTitle:"Profile & Settings",pEdit:"Display name",pSave:"Save",pPw:"Change password",pOld:"Current password",pNew:"New password (min 6)",pNew2:"Confirm new password",pUpd:"Update password",pReset:"Forgot current password? Email me a reset link",pGoog:"You signed in with Google, so your password is managed by your Google account.",pGuestT:"You are in guest mode. Login to save your items online and use them on any device.",pGuestN:"Guest",pSet:"Settings",pLang:"Language",pTheme:"Theme",pSnd:"Sound",pInst:"Install app",pvEmail:"Signed in with Email & Password",pvGoogle:"Signed in with Google",pwReq:"Enter your current and new password.",pwShort:"New password must be at least 6 characters.",pwMis:"New passwords do not match.",pwOk:"Password updated ✅",rstOk:"Reset link sent. Check your email.",dnOk:"Name updated ✅",pDnP:"Your name",instT:"Install app",instD:"Use it like a real app from your home screen.",instIosD:"Tap Share ⬆️, then Add to Home Screen.",instB:"Install",instOk:"App installed 🎉",instMenu:"Open your browser menu and choose Install app or Add to Home screen.",tag:"Never let medicines, food or essentials expire again.",login:"Login",signup:"Sign up",google:"Continue with Google",or:"or use email",email:"Email",pass:"Password",ph6:"At least 6 characters",forgot:"Forgot password?",signout:"Sign out",add:"＋ Add item",kAll:"All items",kRed:"Expired",kAmb:"Within 7 days",kSafe:"Safe",c1:"🍩 Status overview",c2:"📊 Expiring in next 6 months",c3:"🏷️ By category",search:"Search by name or location",soon:"Soonest first",late:"Latest first",az:"Name A-Z",items:"📋 Your items",xl:"📊 Excel",pdf:"📄 PDF",lName:"✏️ Item name",lCat:"🏷️ Category",lDate:"📅 Expiry date",lAlert:"🔔 Alert (days before)",lNote:"📍 Location / note",pName:"e.g. Paracetamol 500mg, Amul Butter",pNote:"Kitchen shelf",save:"Add item",saveEdit:"Save changes",cancel:"Cancel",mtAdd:"Add new item",mtEdit:"Edit item",edit:"Edit",del:"Delete",conf:"Confirm?",noMatch:"No items match your filters.",noItems:"Nothing tracked yet. Add your first item, or see how it looks with samples.",demo:"✨ Load sample items",tAdd:"Item added 🎉",tUp:"Item updated ✅",tDel:"Item deleted 🗑️",req:"Name and expiry date are required.",bRed:"⚠️  {c} item(s) expired. Please stop using and dispose of safely.",bAmb:"⏰  {c} item(s) expire within 7 days.",bOk:"🎉  Everything looks fresh and safe!",gm:"Good morning ☀️",ga:"Good afternoon 🌤️",ge:"Good evening 🌙",attn:"need attention",lExp:"Expired",lAmb:"≤ 7 days",lYel:"Upcoming",lOk:"Good",over:"Overdue",mons:"Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec",exp:"❌ Expired {n}d ago",today:"🚨 Expires today",left:"{n} days left",s_cloud:"Cloud sync on",s_save:"Saving",s_err:"Sync error",s_wait:"Connecting",setup:"⚙️ Setup pending: open firebase-config.js, paste your Firebase config, then redeploy.",syncErr:"Could not save to cloud. Check Firestore rules.",newq:"New here?",haveq:"Already have an account?",gmsg:"👤 Guest mode: your items are saved in this browser. Login to back them up online and open them on any device.",loginBtn:"🔐 Login / Sign up",skip:"Continue as guest",tMerge:"Your items are now saved to your account ☁️",s_guest:"Guest mode",st_red:"Expired",st_amb:"Within 7 days",st_yel:"Upcoming",st_ok:"Good",hName:"Item",hCat:"Category",hNote:"Location / Note",hDate:"Expiry date",hDays:"Days left",hStatus:"Status",noData:"Add some items first",done:"Report downloaded ✅",pdfErr:"PDF could not be created",rTitle:"Expiry Report",rGen:"Generated"},
+hi:{loginH:"🔐 लॉगिन",nHome:"होम",nMe:"प्रोफ़ाइल",pTitle:"प्रोफ़ाइल और सेटिंग",pEdit:"दिखने वाला नाम",pSave:"सहेजें",pPw:"पासवर्ड बदलें",pOld:"मौजूदा पासवर्ड",pNew:"नया पासवर्ड (कम से कम 6)",pNew2:"नया पासवर्ड दोबारा",pUpd:"पासवर्ड अपडेट करें",pReset:"मौजूदा पासवर्ड भूल गए? रीसेट लिंक ईमेल पर पाएं",pGoog:"आपने Google से साइन इन किया है, इसलिए पासवर्ड आपके Google अकाउंट से ही बदलता है।",pGuestT:"आप गेस्ट मोड में हैं। आइटम ऑनलाइन सेव करने और किसी भी डिवाइस पर देखने के लिए लॉगिन करें।",pGuestN:"गेस्ट",pSet:"सेटिंग",pLang:"भाषा",pTheme:"थीम",pSnd:"आवाज़",pInst:"ऐप इंस्टॉल करें",pvEmail:"ईमेल और पासवर्ड से साइन इन",pvGoogle:"Google से साइन इन",pwReq:"मौजूदा और नया पासवर्ड भरें।",pwShort:"नया पासवर्ड कम से कम 6 अक्षर का हो।",pwMis:"नए पासवर्ड मेल नहीं खाते।",pwOk:"पासवर्ड अपडेट हो गया ✅",rstOk:"रीसेट लिंक भेज दिया। ईमेल देखें।",dnOk:"नाम अपडेट हो गया ✅",pDnP:"आपका नाम",instT:"ऐप इंस्टॉल करें",instD:"इसे होम स्क्रीन से असली ऐप की तरह चलाएं।",instIosD:"Share ⬆️ दबाएं, फिर Add to Home Screen चुनें।",instB:"इंस्टॉल",instOk:"ऐप इंस्टॉल हो गया 🎉",instMenu:"ब्राउज़र मेन्यू खोलकर Install app या Add to Home screen चुनें।",tag:"दवाइयाँ, खाना या ज़रूरी सामान कभी एक्सपायर न होने दें।",login:"लॉगिन",signup:"साइन अप",google:"Google से जारी रखें",or:"या ईमेल से",email:"ईमेल",pass:"पासवर्ड",ph6:"कम से कम 6 अक्षर",forgot:"पासवर्ड भूल गए?",signout:"साइन आउट",add:"＋ आइटम जोड़ें",kAll:"सभी आइटम",kRed:"एक्सपायर",kAmb:"7 दिन में",kSafe:"सुरक्षित",c1:"🍩 स्थिति सारांश",c2:"📊 अगले 6 महीनों में एक्सपायरी",c3:"🏷️ श्रेणी अनुसार",search:"नाम या जगह से खोजें",soon:"जल्दी वाले पहले",late:"देर वाले पहले",az:"नाम A-Z",items:"📋 आपके आइटम",xl:"📊 एक्सेल",pdf:"📄 पीडीएफ",lName:"✏️ आइटम का नाम",lCat:"🏷️ श्रेणी",lDate:"📅 एक्सपायरी तारीख",lAlert:"🔔 अलर्ट (कितने दिन पहले)",lNote:"📍 जगह / नोट",pName:"जैसे पैरासिटामोल 500mg, अमूल बटर",pNote:"रसोई की अलमारी",save:"आइटम जोड़ें",saveEdit:"बदलाव सहेजें",cancel:"रद्द करें",mtAdd:"नया आइटम जोड़ें",mtEdit:"आइटम बदलें",edit:"बदलें",del:"हटाएं",conf:"पक्का?",noMatch:"फ़िल्टर से कोई आइटम नहीं मिला।",noItems:"अभी कुछ नहीं जोड़ा। पहला आइटम जोड़ें या सैंपल देखें।",demo:"✨ सैंपल आइटम लोड करें",tAdd:"आइटम जुड़ गया 🎉",tUp:"आइटम अपडेट हुआ ✅",tDel:"आइटम हट गया 🗑️",req:"नाम और एक्सपायरी तारीख ज़रूरी है।",bRed:"⚠️  {c} आइटम एक्सपायर हो चुके हैं। इस्तेमाल बंद करें और सुरक्षित तरीके से फेंकें।",bAmb:"⏰  {c} आइटम 7 दिन में एक्सपायर होंगे।",bOk:"🎉  सब कुछ ताज़ा और सुरक्षित है!",gm:"सुप्रभात ☀️",ga:"नमस्कार 🌤️",ge:"शुभ संध्या 🌙",attn:"पर ध्यान दें",lExp:"एक्सपायर",lAmb:"≤ 7 दिन",lYel:"जल्द",lOk:"ठीक",over:"बीत चुके",mons:"जन,फ़र,मार्च,अप्रै,मई,जून,जुल,अग,सित,अक्टू,नव,दिस",exp:"❌ {n} दिन पहले एक्सपायर",today:"🚨 आज एक्सपायर",left:"{n} दिन बाकी",s_cloud:"क्लाउड सिंक चालू",s_save:"सहेज रहे हैं",s_err:"सिंक में दिक्कत",s_wait:"कनेक्ट हो रहा है",setup:"⚙️ सेटअप बाकी है: firebase-config.js खोलकर अपनी Firebase config डालें, फिर दोबारा deploy करें।",syncErr:"क्लाउड में सेव नहीं हुआ। Firestore rules जांचें।",newq:"नए हैं?",haveq:"पहले से अकाउंट है?",gmsg:"👤 गेस्ट मोड: आपके आइटम इसी ब्राउज़र में सेव हैं। ऑनलाइन बैकअप और किसी भी डिवाइस पर देखने के लिए लॉगिन करें।",loginBtn:"🔐 लॉगिन / साइन अप",skip:"गेस्ट के रूप में जारी रखें",tMerge:"आपके आइटम अब आपके अकाउंट में सेव हो गए ☁️",s_guest:"गेस्ट मोड",st_red:"एक्सपायर",st_amb:"7 दिन में",st_yel:"जल्द",st_ok:"ठीक",hName:"आइटम",hCat:"श्रेणी",hNote:"जगह / नोट",hDate:"एक्सपायरी तारीख",hDays:"बचे दिन",hStatus:"स्थिति",noData:"पहले कुछ आइटम जोड़ें",done:"रिपोर्ट डाउनलोड हो गई ✅",pdfErr:"PDF नहीं बन सका",rTitle:"एक्सपायरी रिपोर्ट",rGen:"तारीख"}};
 function tr(k,v){var s=D[lang][k];if(s==null)s=D.en[k];if(s==null)s=k;if(v)for(var x in v)s=s.replace("{"+x+"}",v[x]);return s}
 function LOC(){return lang==="hi"?"hi-IN":"en-GB"}
 function swt(){$("swT").textContent=tr(mode==="in"?"newq":"haveq");$("swB").textContent=tr(mode==="in"?"signup":"login")}
-function cn(k){return lang==="hi"?(CATH[k]||k):k}
+function cn(k){return lang==="hi"?(CATH[k]||k):(k==="Electronics"?"Gadgets":k)}
 function fillCat(){var v=$("cat").value;$("cat").innerHTML=Object.keys(CATS).map(function(k){return'<option value="'+k+'">'+CATS[k]+" "+cn(k)+"</option>"}).join("");if(v)$("cat").value=v}
 function applyLang(){document.documentElement.lang=lang;
   [].forEach.call(document.querySelectorAll("[data-t]"),function(e){e.textContent=tr(e.getAttribute("data-t"))});
   [].forEach.call(document.querySelectorAll("[data-p]"),function(e){e.placeholder=tr(e.getAttribute("data-p"))});
   [].forEach.call(document.querySelectorAll(".langb"),function(b){b.textContent=lang==="en"?"हिंदी":"English"});
   $("save").textContent=editId?tr("saveEdit"):tr("save");$("mt").textContent=editId?tr("mtEdit"):tr("mtAdd");
-  $("go").textContent=mode==="in"?tr("login"):tr("signup");swt();fillCat();setSync(setSync.k);if(!$("app").hidden)render(false)}
+  $("go").textContent=mode==="in"?tr("login"):tr("signup");swt();fillCat();setSync(setSync.k);instUI();if(!$("app").hidden)render(false)}
 var AC=null;
 function beep(f1,f2,d,v){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();var o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime;o.type="sine";o.frequency.setValueAtTime(f1,t);o.frequency.exponentialRampToValueAtTime(f2,t+d);g.gain.setValueAtTime(v||.07,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(AC.destination);o.start();o.stop(t+d)}catch(e){}}
 function sfx(k){if(!snd)return;if(k==="ok"){setTimeout(function(){beep(520,880,.16);setTimeout(function(){beep(880,1175,.2)},100)},90)}else if(k==="del"){setTimeout(function(){beep(420,150,.22)},90)}else if(k==="err"){setTimeout(function(){beep(220,140,.25,.09)},90)}else beep(720,540,.07,.05)}
@@ -220,7 +276,7 @@ function st(i){var n=days(i.date);return n<0?"red":n<=7?"amb":n<=i.alert?"yel":"
 function lbl(n){return n<0?tr("exp",{n:-n}):n===0?tr("today"):(n<=7?"⏰ ":n<=30?"⏳ ":"✅ ")+tr("left",{n:n})}
 function fd(d){return new Date(d+"T00:00:00").toLocaleDateString(LOC(),{day:"numeric",month:"short",year:"numeric"})}
 function iso(n){var d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
-function toast(m,k){var t=$("toast");t.textContent=m;t.className="show";clearTimeout(toast.t);toast.t=setTimeout(function(){t.className=""},2400);sfx(k||"ok")}
+function toast(m,k,ms){var t=$("toast");t.textContent=m;t.className="show";clearTimeout(toast.t);toast.t=setTimeout(function(){t.className=""},ms||2400);sfx(k||"ok")}
 function setSync(k){k=k||"wait";setSync.k=k;$("syncT").textContent=tr("s_"+k);$("sync").className="sync "+(k==="cloud"||k==="save"?"cloud":k==="err"?"err":"")}
 function count(id,to){var el=$(id),from=shown[id]||0,t0=null;shown[id]=to;if(from===to){el.textContent=to;return}function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/700,1);el.textContent=Math.round(from+(to-from)*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
 function loadLocal(){try{var r=localStorage.getItem(KEY);items=r?JSON.parse(r):[]}catch(e){items=[]}}
@@ -234,7 +290,7 @@ async function pull(first,guest){try{var s=await ref.get(),cloud=(s.exists&&Arra
   if(guest&&guest.length){try{localStorage.removeItem(GK)}catch(e){}toast(tr("tMerge"))}
   setSync("cloud");render(true)}catch(e){setSync("err")}}
 /* ---------- auth ---------- */
-function authErr(e){var m={"auth/invalid-credential":"Wrong email or password.","auth/wrong-password":"Wrong email or password.","auth/user-not-found":"No account found for this email.","auth/email-already-in-use":"This email is already registered. Please sign in.","auth/weak-password":"Password must be at least 6 characters.","auth/invalid-email":"Please enter a valid email.","auth/popup-closed-by-user":"Sign-in popup was closed.","auth/unauthorized-domain":"This website is not added in Firebase Authorized domains.","auth/operation-not-allowed":"This sign-in method is not enabled in Firebase.","auth/too-many-requests":"Too many attempts. Try again later."};return m[e.code]||e.message}
+function authErr(e){var m={"auth/invalid-credential":"Wrong email or password.","auth/wrong-password":"Wrong email or password.","auth/user-not-found":"No account found for this email.","auth/email-already-in-use":"This email is already registered. Please sign in.","auth/weak-password":"Password must be at least 6 characters.","auth/invalid-email":"Please enter a valid email.","auth/popup-closed-by-user":"Sign-in popup was closed.","auth/unauthorized-domain":"This website is not added in Firebase Authorized domains.","auth/operation-not-allowed":"This sign-in method is not enabled in Firebase.","auth/too-many-requests":"Too many attempts. Try again later.","auth/requires-recent-login":"Please logout, login again and retry."};return m[e.code]||e.message}
 function am(t,ok){$("am").textContent=t;$("am").className="msg "+(ok?"o":"e")}
 function setMode(m){mode=m;$("tIn").className=m==="in"?"on":"";$("tUp").className=m==="up"?"on":"";$("go").textContent=m==="in"?tr("login"):tr("signup");$("pw").autocomplete=m==="in"?"current-password":"new-password";swt();am("")}
 $("tIn").onclick=function(){setMode("in")};$("tUp").onclick=function(){setMode("up")};
@@ -245,7 +301,7 @@ $("gg").onclick=function(){am("");auth.signInWithPopup(new firebase.auth.GoogleA
 $("fp").onclick=function(){var e=$("em").value.trim();if(!e){am("Type your email first, then tap Forgot password.");return}auth.sendPasswordResetEmail(e).then(function(){am("Reset link sent. Check your inbox.",1)}).catch(function(x){am(authErr(x))})};
 $("out").onclick=function(){auth&&auth.signOut()};
 function showApp(u){$("app").hidden=false;var n=u?(u.displayName||u.email||"User"):"";$("uname").textContent=n;$("av").textContent=(n||"G")[0].toUpperCase();
-  $("usr").hidden=!u;$("loginBtn").hidden=!!u;$("guest").hidden=!!u;who=u?n.split(/[ @]/)[0]:"";setSync(u?"wait":"guest");render(true)}
+  $("usr").hidden=!u;$("gear").hidden=!!u;$("loginBtn").hidden=!!u;$("guest").hidden=!!u;who=u?n.split(/[ @]/)[0]:"";setSync(u?"wait":"guest");render(true)}
 function cfgOK(){return window.firebase&&FB.apiKey&&String(FB.apiKey).indexOf("PASTE")!==0}
 function openAuth(){$("auth").hidden=false;var ok=cfgOK();$("go").disabled=!ok;$("gg").disabled=!ok;am(ok?"":tr("setup"))}
 function closeAuth(){$("auth").hidden=true}
@@ -283,7 +339,7 @@ function render(anim){
   else if(c.amb){b.textContent=tr("bAmb",{c:c.amb});b.classList.add("show","warn")}
   else if(items.length){b.textContent=tr("bOk");b.classList.add("show","good")}
   var hr=new Date().getHours();$("hi").textContent=tr(hr<12?"gm":hr<17?"ga":"ge")+(who?", "+who:"");$("hs").textContent=new Date().toLocaleDateString(LOC(),{weekday:"long",day:"numeric",month:"long"})+(c.red+c.amb?"  ·  "+(c.red+c.amb)+" "+tr("attn"):"");
-  $("chips").innerHTML=["All"].concat(Object.keys(CATS)).map(function(k){return'<button class="chip'+(cf===k?" on":"")+'" data-c="'+k+'" style="--c:'+cs(k)+'">'+(CATS[k]||"🌈")+" "+cn(k)+'</button>'}).join("");
+  $("chips").innerHTML=["All"].concat(Object.keys(CATS)).map(function(k){return'<button class="chip'+(cf===k?" on":"")+'" data-c="'+k+'" style="--c:'+cs(k)+'"><b class="ce">'+(CATS[k]||"🌈")+'</b><span>'+cn(k)+'</span></button>'}).join("");
   var q=$("q").value.trim().toLowerCase(),so=$("sort").value;
   var l=items.filter(function(i){return match(i)&&(cf==="All"||i.cat===cf)&&(!q||(i.name+" "+(i.note||"")).toLowerCase().indexOf(q)>-1)}).sort(function(a,b){return so==="az"?a.name.localeCompare(b.name):so==="late"?(a.date<b.date?1:-1):(a.date<b.date?-1:1)});
   $("list").className="grid2"+(anim?" anim":"");
@@ -293,8 +349,8 @@ function render(anim){
 /* ---------- form ---------- */
 function openM(){$("modal").classList.add("open");setTimeout(function(){$("name").focus()},200)}
 function closeM(){$("modal").classList.remove("open");editId=null;$("name").value="";$("note").value="";$("err").textContent="";$("save").textContent=tr("save");$("mt").textContent=tr("mtAdd")}
-$("addBtn").onclick=$("fab").onclick=openM;$("cancel").onclick=closeM;
-$("modal").onclick=function(e){if(e.target===$("modal"))closeM()};document.onkeydown=function(e){if(e.key==="Escape")closeM()};
+$("addBtn").onclick=$("navAdd").onclick=openM;$("cancel").onclick=closeM;
+$("modal").onclick=function(e){if(e.target===$("modal"))closeM()};document.onkeydown=function(e){if(e.key==="Escape"){closeM();closeP()}};
 $("save").onclick=function(){var n=$("name").value.trim(),d=$("date").value;if(!n||!d){$("err").textContent=tr("req");sfx("err");return}
   var o={name:n,cat:$("cat").value,date:d,alert:parseInt($("alert").value)||30,note:$("note").value.trim()},ed=editId;
   if(ed){items.forEach(function(i){if(i.id===ed)for(var k in o)i[k]=o[k]})}else{o.id=Date.now().toString(36)+Math.random().toString(36).slice(2,5);items.push(o)}
@@ -312,9 +368,37 @@ $("theme").onclick=function(){theme(document.documentElement.getAttribute("data-
 fillCat();
 var dt=new Date();dt.setMonth(dt.getMonth()+6);$("date").value=dt.toISOString().slice(0,10);
 [].forEach.call(document.querySelectorAll(".langb"),function(b){b.onclick=function(){lang=lang==="en"?"hi":"en";try{localStorage.setItem("lang",lang)}catch(e){}applyLang()}});
-$("snd").textContent=snd?"🔊":"🔇";$("snd").onclick=function(){snd=!snd;try{localStorage.setItem("snd",snd?"1":"0")}catch(e){}$("snd").textContent=snd?"🔊":"🔇"};
+function sndUI(){$("snd").textContent=$("stSnd").textContent=snd?"🔊":"🔇"}sndUI();$("snd").onclick=$("stSnd").onclick=function(){snd=!snd;try{localStorage.setItem("snd",snd?"1":"0")}catch(e){}sndUI()};
 $("loginBtn").onclick=$("gl").onclick=openAuth;$("skip").onclick=$("x").onclick=closeAuth;$("swB").onclick=function(){setMode(mode==="in"?"up":"in")};$("xl").onclick=xlsx;$("pdf").onclick=pdf;
-applyLang();boot();
+/* ---- profile / settings ---- */
+function pmsg(t,ok){$("pMsg").textContent=t;$("pMsg").className="msg "+(ok?"o":"e")}
+function fillP(u){var n=u?(u.displayName||u.email||"User"):tr("pGuestN"),pv=u?u.providerData.map(function(p){return p.providerId}):[],hasPw=pv.indexOf("password")>-1;
+  $("pav").textContent=n[0].toUpperCase();$("pName").textContent=n;$("pMail").textContent=u&&u.email||"";$("pProv").textContent=u?(hasPw?tr("pvEmail"):tr("pvGoogle")):"";
+  $("pAcc").hidden=!u;$("pGuest").hidden=!!u;$("pwBox").hidden=!hasPw;$("gNote").hidden=!(u&&!hasPw);$("out").hidden=!u;$("pDn").value=u&&u.displayName||"";pmsg("")}
+function openP(){fillP(auth&&auth.currentUser);$("pm").classList.add("open")}
+function closeP(){$("pm").classList.remove("open");pmsg("")}
+$("pm").onclick=function(e){if(e.target===$("pm"))closeP()};$("pClose").onclick=closeP;
+$("nMe").onclick=$("gear").onclick=$("usr").onclick=openP;$("nHome").onclick=function(){window.scrollTo({top:0,behavior:"smooth"})};
+$("pLogin").onclick=function(){closeP();openAuth()};$("stTheme").onclick=function(){$("theme").onclick()};
+$("out").onclick=function(){closeP();auth&&auth.signOut()};
+$("pDnS").onclick=function(){var u=auth&&auth.currentUser;if(!u)return;u.updateProfile({displayName:$("pDn").value.trim()}).then(function(){var n=u.displayName||u.email;$("uname").textContent=n;$("av").textContent=n[0].toUpperCase();who=n.split(/[ @]/)[0];fillP(u);pmsg(tr("dnOk"),1);render(false)}).catch(function(e){pmsg(authErr(e))})};
+$("pwSave").onclick=function(){var u=auth&&auth.currentUser,o=$("pwOld").value,n=$("pwNew").value,n2=$("pwNew2").value;if(!u)return;
+  if(!o||!n){pmsg(tr("pwReq"));return}if(n.length<6){pmsg(tr("pwShort"));return}if(n!==n2){pmsg(tr("pwMis"));return}
+  $("pwSave").disabled=true;
+  u.reauthenticateWithCredential(firebase.auth.EmailAuthProvider.credential(u.email,o)).then(function(){return u.updatePassword(n)}).then(function(){$("pwOld").value=$("pwNew").value=$("pwNew2").value="";pmsg(tr("pwOk"),1);toast(tr("pwOk"))}).catch(function(e){pmsg(authErr(e))}).then(function(){$("pwSave").disabled=false})};
+$("pwReset").onclick=function(){var u=auth&&auth.currentUser;if(u&&u.email)auth.sendPasswordResetEmail(u.email).then(function(){pmsg(tr("rstOk"),1)}).catch(function(e){pmsg(authErr(e))})};
+/* ---- install app (PWA) ---- */
+var dip=null;
+function isStd(){return(window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone}
+function isIOS(){return/iphone|ipad|ipod/i.test(navigator.userAgent)}
+function dismissed(){try{var t=+localStorage.getItem("instX");return t&&Date.now()-t<6048e5}catch(e){return false}}
+function instUI(){$("instD").textContent=tr(isIOS()?"instIosD":"instD");$("install").hidden=!(!isStd()&&(dip||isIOS())&&!dismissed());$("stInst").hidden=!!isStd()}
+function doInstall(){if(dip){dip.prompt();dip.userChoice.then(function(){dip=null;instUI()})}else toast(tr(isIOS()?"instIosD":"instMenu"),"ok",6000)}
+window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();dip=e;instUI()});
+window.addEventListener("appinstalled",function(){dip=null;instUI();toast(tr("instOk"))});
+$("instBtn").onclick=$("stInst").onclick=doInstall;$("instX").onclick=function(){try{localStorage.setItem("instX",Date.now())}catch(e){}instUI()};
+if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
+applyLang();instUI();boot();
 </script>
 </body>
 </html>
