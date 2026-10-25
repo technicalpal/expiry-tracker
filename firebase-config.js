@@ -1,11 +1,10 @@
-// STEP: Firebase console se mila "const firebaseConfig = { ... };" wala block
-// yahan seedha paste karein (neeche wala purana block hata dein).
-// Dhyan: "import ..." aur "initializeApp(...)" wali lines paste NA karein.
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "PASTE_API_KEY",
-  authDomain: "PASTE_PROJECT_ID.firebaseapp.com",
-  projectId: "PASTE_PROJECT_ID",
-  storageBucket: "PASTE_PROJECT_ID.appspot.com",
-  messagingSenderId: "PASTE_SENDER_ID",
-  appId: "PASTE_APP_ID"
+  apiKey: "AIzaSyB-sdrEp8nbFwfloJTcO6YFRYC8JenqzMc",
+  authDomain: "expiry-tracker-c1ffa.firebaseapp.com",
+  projectId: "expiry-tracker-c1ffa",
+  storageBucket: "expiry-tracker-c1ffa.firebasestorage.app",
+  messagingSenderId: "469324062757",
+  appId: "1:469324062757:web:d7fbd2741e3a3014cb1fcc",
+  measurementId: "G-03Y80TGC88"
 };
