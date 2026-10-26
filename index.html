@@ -119,8 +119,90 @@ html,body{max-width:100%;overflow-x:hidden}
 .foot{flex-wrap:wrap;gap:6px}.sechd{flex-wrap:wrap}
 input,select{font-size:16px}
 #toast{bottom:calc(92px + env(safe-area-inset-bottom));max-width:90vw;text-align:center}}
+/* pro theme */
+:root:not([data-theme=dark]){--g:linear-gradient(135deg,#4f46e5,#7c3aed);--acc:#4f46e5;--bg:#f4f5f9;--card:rgba(255,255,255,.94);--line:rgba(15,23,42,.08);--sh:0 1px 2px rgba(15,23,42,.04),0 10px 28px rgba(15,23,42,.06);--b1:#e0e7ff;--b2:#ede9fe;--b3:#dbeafe}
+[data-theme=dark]{--g:linear-gradient(135deg,#6366f1,#8b5cf6);--bg:#090c16;--card:rgba(20,26,45,.9);--line:rgba(255,255,255,.08);--b1:#1e1b4b;--b2:#2e1065;--b3:#0c4a6e}
+.blob{opacity:.45}.glass{border-radius:18px}
+.top h1,.hi h2,.sec,.ch h3,.ac h1,.card h2,.mc h2,.pname,.name,.kpi b,.ring b{font-weight:700;letter-spacing:-.015em}
+.hi h2{font-size:26px}.btn{border-radius:11px;font-weight:600;box-shadow:0 4px 12px rgba(79,70,229,.28)}
+.kpi{border-radius:18px}.kpi .ki{border-radius:10px}.item{border-radius:16px;padding:14px 16px}.item:before{width:4px}.bar{height:5px}.chip{font-weight:600}
+.top{position:sticky;top:0;z-index:25;margin:0 -18px;padding:12px 18px;background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid transparent}
+.bell,.bnav button{position:relative}.bdg{position:absolute;top:-5px;right:-5px;min-width:18px;height:18px;border-radius:9px;background:var(--amb);color:#fff;font:700 11px/18px "Plus Jakarta Sans",system-ui,sans-serif;text-align:center;padding:0 5px;font-style:normal;box-shadow:0 0 0 2px var(--bg)}.bdg.r{background:var(--red)}
+.attn{padding:16px 18px;margin-bottom:16px;animation:up .6s .1s both}.ah{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}.ah b{font-size:15px}
+.ar{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line)}.aico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-size:19px;flex:none}
+.ainfo{flex:1;min-width:0}.ainfo b{display:block;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ainfo span{font-size:12px;color:var(--mute)}
+.abd{font-size:12px;font-weight:700;color:var(--s);background:color-mix(in srgb,var(--s) 14%,transparent);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.nopt{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:var(--soft);margin-bottom:10px;font-weight:600;font-size:13.5px}
+.ghost.on{border-color:var(--grn);color:var(--grn)}
+@media(max-width:820px){.top{margin:0 -12px;padding:10px 12px}.bnav .bdg{top:0;right:calc(50% - 20px)}.bnav button svg{display:block}.bnav .nadd svg{color:#fff;width:26px;height:26px}.bnav button{font-size:10.5px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* Premium upgrade: dual usage modes + scan workflow */
+.mode-switch{display:flex;align-items:center;gap:4px;padding:4px;background:var(--soft);border:1px solid var(--line);border-radius:14px}
+.mode-switch button{border:0;background:transparent;color:var(--mute);font:inherit;font-size:12px;font-weight:750;padding:9px 11px;border-radius:10px;cursor:pointer;white-space:nowrap}
+.mode-switch button.mode-on{background:#6366f1;color:white;box-shadow:0 4px 12px #6366f133}
+.scan-launch{white-space:nowrap}.medical-field{display:none}.medical-mode .medical-field{display:block}.scan-note{font-size:12px;color:var(--mute);background:var(--soft);padding:10px;border-radius:10px}
+.scan-card{max-width:620px}.scan-sub{color:var(--mute);font-size:13px;margin:4px 0 12px}.scan-tabs{display:flex;gap:8px;margin:12px 0}.scan-tabs button{flex:1}
+#scanVideo{display:none;width:100%;max-height:300px;object-fit:cover;background:#0b1020;border-radius:16px;margin:10px 0}.scan-help{font-size:13px;color:var(--mute);margin:10px 0;line-height:1.5}.scan-warning{font-size:12px;line-height:1.5;background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;padding:11px;border-radius:12px;margin-top:14px}.scan-card textarea{width:100%;margin:10px 0}.scan-card input[type=file]{width:100%;padding:10px;border:1px dashed var(--line);border-radius:12px}
+@media(max-width:820px){.mode-switch{order:4;width:100%;justify-content:stretch}.mode-switch button{flex:1}.scan-launch{font-size:12px;padding:9px}.top{flex-wrap:wrap}.scan-card{max-height:90vh;overflow:auto}}
+
+
+/* Final design pass: premium responsive white/indigo + midnight dark mode */
+:root:not([data-theme=dark]){--bg:#f5f7ff;--card:rgba(255,255,255,.97);--text:#18234a;--mute:#7180a7;--line:#e2e8ff;--soft:#eef1ff;--acc:#5145e5;--sh:0 12px 32px rgba(45,55,130,.075);--g:linear-gradient(135deg,#4f46e5 0%,#7657ed 55%,#8b5cf6 100%)}
+body{background:radial-gradient(ellipse at 8% 0%,rgba(129,140,248,.13),transparent 35%),radial-gradient(ellipse at 95% 10%,rgba(167,139,250,.12),transparent 30%),var(--bg);letter-spacing:-.01em}
+.wrap{max-width:1500px}
+.glass{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);box-shadow:var(--sh);border-radius:20px}
+.top{border:1px solid var(--line);border-radius:22px;padding:13px 16px;background:var(--card);box-shadow:var(--sh);gap:12px}
+.top h1{font-weight:850;letter-spacing:-.04em}
+.lg{box-shadow:0 8px 20px rgba(79,70,229,.22);border-radius:16px}
+.btn{background:var(--g);box-shadow:0 7px 16px rgba(79,70,229,.2);border-radius:12px;transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(79,70,229,.27)}
+.ghost,.ib,.usr{border-radius:12px;transition:background .18s ease,border-color .18s ease}
+.kpi{border-radius:18px;min-height:126px;transition:transform .18s ease,border-color .18s ease}
+.kpi:hover{transform:translateY(-2px);border-color:#b7baff}
+.ch{border-radius:20px;padding:18px}
+.hi{padding:22px 4px 14px}
+.hi h2{letter-spacing:-.035em}
+.tb{border-radius:16px;background:var(--card);border:1px solid var(--line);padding:10px;box-shadow:var(--sh)}
+#q,select,input,textarea{border-radius:12px}
+.item,.it,.card{border-radius:17px}
+.modal{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.mc{border-radius:22px!important;border:1px solid var(--line)}
+.bnav{border:1px solid var(--line);box-shadow:0 -8px 28px rgba(40,50,120,.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.mode-switch{border-radius:14px;background:var(--soft)}
+.mode-switch button.mode-on{background:var(--g);box-shadow:0 5px 13px rgba(79,70,229,.22)}
+.scan-tabs button{border-radius:12px}
+.scan-warning{border-radius:14px}
+[data-theme=dark] body{background:radial-gradient(ellipse at 10% 0%,rgba(79,70,229,.17),transparent 34%),radial-gradient(ellipse at 95% 5%,rgba(124,58,237,.13),transparent 30%),var(--bg)}
+[data-theme=dark] .glass,[data-theme=dark] .top,[data-theme=dark] .tb{border-color:rgba(148,163,255,.15);box-shadow:0 14px 34px rgba(0,0,0,.18)}
+[data-theme=dark] .scan-warning{background:#3b241a;color:#fed7aa;border-color:#7c4526}
+:focus-visible{outline:3px solid rgba(99,102,241,.45);outline-offset:2px}
+@media(min-width:1100px){.charts{gap:18px}.kpis{gap:16px}.grid2{gap:16px}}
+@media(max-width:820px){.top{border-radius:0 0 20px 20px}.kpi{min-height:105px}.ch{padding:14px}.mc{border-radius:20px!important}.bnav{border-radius:18px 18px 0 0}}
+
+
+/* Premium desktop application shell: sidebar is hidden on mobile */
+.desktop-sidebar{display:none}
+@media(min-width:1100px){
+ body{background:radial-gradient(ellipse at 80% 0%,rgba(99,102,241,.07),transparent 34%),var(--bg)}
+ .desktop-sidebar{display:flex;flex-direction:column;position:fixed;z-index:28;inset:14px auto 14px 14px;width:246px;padding:20px 14px 14px;border:1px solid var(--line);border-radius:24px;background:var(--card);backdrop-filter:blur(22px);box-shadow:var(--sh);color:var(--text)}
+ .side-brand{display:flex;gap:11px;align-items:center;padding:3px 5px 22px;border-bottom:1px solid var(--line)}
+ .side-logo{display:grid;place-items:center;width:43px;height:43px;flex:none;border-radius:14px;background:var(--g);color:white;font-size:26px;box-shadow:0 8px 20px rgba(79,70,229,.28)}
+ .side-brand strong{display:block;font-size:15px;letter-spacing:-.04em;font-weight:800}.side-brand small{display:block;font-size:9px;color:var(--mute);line-height:1.35;margin-top:3px}
+ .side-user{display:flex;align-items:center;gap:10px;margin:17px 2px 22px;padding:12px;border-radius:15px;background:var(--soft)}.side-avatar{display:grid;place-items:center;width:35px;height:35px;border-radius:12px;background:var(--g);color:white;font-size:18px}.side-user strong{display:block;font-size:12px}.side-user small{display:block;font-size:10px;color:var(--mute);margin-top:2px}
+ .side-label{font-size:9px;font-weight:800;letter-spacing:.14em;color:var(--mute);padding:0 10px 8px;margin-top:2px}
+ .side-link{display:flex;align-items:center;gap:11px;padding:11px 12px;margin-bottom:5px;border-radius:12px;color:var(--mute);text-decoration:none;font-size:12px;transition:.2s}.side-link span{width:22px;text-align:center;font-size:18px}.side-link b{font-weight:700}.side-link:hover,.side-link.active{color:white;background:var(--g);box-shadow:0 7px 18px rgba(79,70,229,.22)}.side-link i{font-style:normal;margin-left:auto;background:#fb7185;color:white;border-radius:99px;padding:1px 6px;font-size:10px}
+ .side-mode{margin:2px 2px 0;padding:12px;border:1px solid var(--line);border-radius:15px}.side-mode small{display:block;color:var(--mute);font-weight:700;font-size:10px;margin-bottom:9px}.side-mode>div{display:flex;gap:5px}.side-mode button{flex:1;border:1px solid var(--line);background:transparent;color:var(--mute);padding:8px 3px;border-radius:9px;font:inherit;font-size:10px;font-weight:700;cursor:pointer}.side-mode button.selected{background:var(--soft);color:var(--acc);border-color:color-mix(in srgb,var(--acc) 35%,transparent)}
+ .side-bottom{margin-top:auto}.side-safe{display:flex;align-items:center;gap:9px;padding:12px;border:1px solid color-mix(in srgb,var(--grn) 20%,var(--line));background:color-mix(in srgb,var(--grn) 6%,var(--card));border-radius:14px;margin-bottom:10px}.side-safe>span{font-size:22px;color:var(--grn)}.side-safe strong{display:block;font-size:10px}.side-safe small{display:block;font-size:9px;color:var(--mute);margin-top:3px}.side-theme{width:100%;padding:10px 12px;border:1px solid var(--line);background:transparent;color:var(--text);border-radius:11px;display:flex;align-items:center;gap:10px;text-align:left;font:inherit;font-size:11px;font-weight:700;cursor:pointer}.side-foot{display:flex;justify-content:space-between;margin:16px 5px 0;font-size:8px;letter-spacing:.12em;color:var(--mute);font-weight:800}.side-foot span{letter-spacing:0}
+ .wrap{max-width:none;margin:0 24px 0 278px;padding:0 10px}.top{margin:0 -10px;padding:13px 16px;border-radius:0 0 20px 20px}.hi{padding:25px 4px 16px}.hi h2{font-size:29px}.kpis{gap:15px;margin-bottom:18px}.kpi{min-height:135px;padding:18px}.charts{grid-template-columns:1fr 1.25fr 1fr;gap:15px}.ch{padding:20px}.grid2{gap:15px}.item{padding:17px}.bnav{display:none!important}
+}
+@media(min-width:821px) and (max-width:1099px){.wrap{max-width:1000px}}
+[data-theme=dark] .desktop-sidebar{background:rgba(13,18,35,.94);border-color:rgba(148,163,255,.14)}
+[data-theme=dark] .side-user,[data-theme=dark] .side-mode{background:rgba(129,140,248,.09)}
+@media(max-width:1099px){.desktop-sidebar{display:none!important}}
+
 </style>
+<link rel="manifest" href="./manifest.webmanifest"><meta name="theme-color" content="#6366f1"><script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("./sw.js").catch(function(){});});}</script>
 </head>
 <body>
 <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i>
@@ -141,13 +223,25 @@ input,select{font-size:16px}
 </section>
 
 <div id="app" hidden>
+<aside class="desktop-sidebar" aria-label="Main navigation">
+  <div class="side-brand"><div class="side-logo">✚</div><div><strong>Expiry Tracker</strong><small>Smart Medicine & Home Inventory</small></div></div>
+  <div class="side-user"><div class="side-avatar">✦</div><div><strong id="sideName">आपका डैशबोर्ड</strong><small>Smart • Simple • Secure</small></div></div>
+  <div class="side-label">WORKSPACE</div>
+  <a class="side-link active" href="#hi" data-side="home"><span>⌂</span><b>डैशबोर्ड</b></a>
+  <a class="side-link" href="#itemsHd" data-side="items"><span>▤</span><b>मेरे आइटम</b></a>
+  <a class="side-link" href="#kpis" data-side="alerts"><span>♧</span><b>एक्सपायरी अलर्ट</b><i id="sideAlertCount">•</i></a>
+  <a class="side-link" href="#cats" data-side="categories"><span>▦</span><b>श्रेणियाँ व रिपोर्ट</b></a>
+  <div class="side-label">YOUR SPACE</div>
+  <div class="side-mode"><small>उपयोग मोड</small><div><button type="button" id="sideHomeMode" class="selected">⌂ Home</button><button type="button" id="sideMedMode">▣ Medical</button></div></div>
+  <div class="side-bottom"><div class="side-safe"><span>✧</span><div><strong>Expiry पर नज़र रखें</strong><small>सुरक्षित रहें, बर्बादी घटाएँ</small></div></div><button class="side-theme" id="sideTheme" type="button">◐ <span>Light / Dark Mode</span></button><div class="side-foot">EXPIRY TRACKER <span>V4</span></div></div>
+</aside>
 <div class="wrap">
   <div class="top">
     <div class="lg">🛡️</div><h1>Expiry Tracker</h1>
     <span class="sync" id="sync"><i></i><em id="syncT" style="font-style:normal">Connecting</em></span>
-    <button class="ghost langb dsk">हिंदी</button><button class="ib dsk" id="snd" title="Sound">🔊</button><button class="ib dsk" id="theme" title="Theme">🌗</button>
-    <button class="btn" id="loginBtn" data-t="loginH">🔐 Login</button><button class="usr" id="usr" hidden title="Profile"><div class="av" id="av">L</div><span id="uname"></span></button><button class="ib" id="gear" title="Settings">⚙️</button>
-    <button class="btn addb" id="addBtn" data-t="add">＋ Add item</button>
+    <div class="mode-switch" role="group" aria-label="Usage mode"><button id="homeMode" class="mode-on" type="button">🏠 <span data-mode-hi="घर">Home</span></button><button id="medMode" type="button">🏥 <span data-mode-hi="मेडिकल स्टोर">Medical Store</span></button></div><button class="ghost langb dsk">हिंदी</button><button class="ib dsk" id="snd" title="Sound">🔊</button><button class="ib dsk" id="theme" title="Theme">🌗</button>
+    <button class="ib bell" id="bell" title="Reminders"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0112 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 004 0"/></svg><i class="bdg" id="bdg" hidden></i></button><button class="btn" id="loginBtn" data-t="loginH">🔐 Login</button><button class="usr" id="usr" hidden title="Profile"><div class="av" id="av">L</div><span id="uname"></span></button><button class="ib" id="gear" title="Settings"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></button>
+    <button class="ghost scan-launch" id="scanBtn" type="button">▦ <span data-en="Scan item" data-hi="स्कैन करें">Scan item</span></button><button class="btn addb" id="addBtn" data-t="add">＋ Add item</button>
   </div>
   <div class="install glass" id="install" hidden><span>📲 <b data-t="instT">Install app</b> · <span id="instD"></span></span><span class="acts"><button class="btn" id="instBtn" data-t="instB">Install</button><button class="ghost" id="instX">✕</button></span></div>
   <div class="hi"><h2 id="hi"></h2><p id="hs"></p></div>
@@ -159,6 +253,7 @@ input,select{font-size:16px}
     <button class="kpi glass" data-s="amb" style="--c:#f97316"><div class="ki">⏰</div><b id="k2">0</b><span data-t="kAmb">Within 7 days</span></button>
     <button class="kpi glass" data-s="safe" style="--c:#10b981"><div class="ki">✅</div><b id="k3">0</b><span data-t="kSafe">Safe</span></button>
   </div>
+  <div class="attn glass" id="attn" hidden></div>
   <div class="charts">
     <div class="ch glass"><h3 data-t="c1">🍩 Status overview</h3><div class="ring"><svg viewBox="0 0 100 100" id="donut"></svg><div><b id="tot">0</b><span>items</span></div></div><div class="lgd" id="lgd"></div></div>
     <div class="ch glass"><h3 data-t="c2">📊 Expiring in next 6 months</h3><div class="bars" id="bars"></div></div>
@@ -167,11 +262,11 @@ input,select{font-size:16px}
   <div class="tb"><div class="sr"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg><input id="q" data-p="search" placeholder="Search by name or location"></div>
     <select id="sort"><option value="soon" data-t="soon">Soonest first</option><option value="late" data-t="late">Latest first</option><option value="az" data-t="az">Name A-Z</option></select></div>
   <div class="chips" id="chips"></div>
-  <div class="sechd"><h2 class="sec" data-t="items">📋 Your items</h2><div class="acts"><button class="ghost" id="xl" data-t="xl">📊 Excel</button><button class="ghost" id="pdf" data-t="pdf">📄 PDF</button></div></div>
+  <div class="sechd" id="itemsHd"><h2 class="sec" data-t="items">📋 Your items</h2><div class="acts"><button class="ghost" id="xl" data-t="xl">📊 Excel</button><button class="ghost" id="pdf" data-t="pdf">📄 PDF</button></div></div>
   <div class="grid2" id="list"></div>
   <div style="height:110px"></div>
 </div>
-<nav class="bnav"><button id="nHome"><b>🏠</b><span data-t="nHome">Home</span></button><button class="nadd" id="navAdd" aria-label="Add"><b>＋</b></button><button id="nMe"><b>👤</b><span data-t="nMe">Profile</span></button></nav>
+<nav class="bnav"><button id="nHome"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg><span data-t="nHome">Home</span></button><button id="nAlert"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0112 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 004 0"/></svg><i class="bdg" id="nbdg" hidden></i><span data-t="nAlert">Alerts</span></button><button class="nadd" id="navAdd" aria-label="Add"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></button><button id="nList"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span data-t="nList">Items</span></button><button id="nMe"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg><span data-t="nMe">Profile</span></button></nav>
 <div class="modal" id="modal"><div class="mc glass">
   <h2 id="mt">Add new item</h2>
   <div class="fm">
@@ -180,9 +275,27 @@ input,select{font-size:16px}
     <div><label data-t="lDate">📅 Expiry date</label><input id="date" type="date"></div>
     <div><label data-t="lAlert">🔔 Alert (days before)</label><input id="alert" type="number" min="1" value="30"></div>
     <div><label data-t="lNote">📍 Location / note</label><input id="note" data-p="pNote" placeholder="Kitchen shelf"></div>
+    <div class="medical-field"><label>Batch / बैच नंबर</label><input id="batch" placeholder="Batch number"></div>
+    <div class="medical-field"><label>Stock quantity / स्टॉक मात्रा</label><input id="quantity" type="number" min="0" step="any" placeholder="e.g. 25"></div>
+    <div class="medical-field"><label>Unit / इकाई</label><select id="unit"><option value="pcs">Pieces / नग</option><option value="strip">Strip / स्ट्रिप</option><option value="box">Box / बॉक्स</option><option value="bottle">Bottle / बोतल</option><option value="pack">Pack / पैक</option><option value="ml">ml</option><option value="g">g</option></select></div>
+    <div class="medical-field"><label>MRP (₹) / अधिकतम खुदरा मूल्य</label><input id="mrp" type="number" min="0" step="0.01" placeholder="0.00"></div>
+    <div class="medical-field"><label>Supplier / सप्लायर</label><input id="supplier" placeholder="Supplier name"></div>
+    <div class="medical-field"><label>Barcode / बारकोड</label><input id="barcode" placeholder="Barcode number"></div>
+    <div class="fw scan-note" id="scanNote" hidden></div>
     <div class="fw msg e" id="err"></div>
     <div class="fw sticky" style="display:flex;gap:8px"><button class="btn" id="save" style="flex:1">Add item</button><button class="ghost" id="cancel" data-t="cancel">Cancel</button></div>
   </div></div></div>
+<div class="modal" id="scanModal"><div class="mc glass scan-card">
+  <div class="phd"><div><h2>▦ Scan barcode / OCR</h2><p class="scan-sub">स्कैन के बाद जानकारी जाँचें और फिर सेव करें</p></div><button class="ghost" id="scanClose" type="button">✕</button></div>
+  <div class="scan-tabs"><button class="btn" id="barcodeTab" type="button">Barcode camera</button><button class="ghost" id="ocrTab" type="button">OCR / फोटो</button></div>
+  <div id="barcodePanel"><video id="scanVideo" playsinline muted></video><div class="scan-help" id="scanHelp">Camera शुरू करने के लिए Barcode camera दबाएँ। HTTPS या localhost आवश्यक है।</div><button class="btn" id="startScan" type="button">Start camera</button><button class="ghost" id="stopScan" type="button" hidden>Stop camera</button><div class="fld"><label>या बारकोड नंबर लिखें</label><input id="manualBarcode" inputmode="numeric" placeholder="Barcode / GTIN"><button class="ghost" id="useBarcode" type="button">इस कोड का उपयोग करें</button></div></div>
+  <div id="ocrPanel" hidden><p>दवाई के लेबल/बॉक्स की साफ फोटो चुनें। OCR गलत पढ़ सकता है; सेव करने से पहले हर फ़ील्ड जाँचें।</p><input id="ocrFile" type="file" accept="image/*" capture="environment"><div class="scan-help" id="ocrStatus"></div><button class="btn" id="runOcr" type="button">फोटो से टेक्स्ट पढ़ें</button><textarea id="ocrText" rows="5" placeholder="पहचाना गया टेक्स्ट यहाँ आएगा"></textarea><button class="ghost" id="applyOcr" type="button">नाम/तारीख फॉर्म में भरें</button></div>
+  <div class="scan-warning">⚠️ Barcode में expiry date अक्सर शामिल नहीं होती। OCR से निकली तारीख अनुमानित है—मूल पैक पर देखकर पुष्टि करें।</div>
+</div></div>
+<div class="modal" id="nm"><div class="mc glass">
+  <div class="phd"><h2 data-t="nTitle">Reminders</h2><button class="ghost" id="nClose">✕</button></div>
+  <div class="nopt" id="nOpt"><span data-t="nAsk">Get expiry reminders on this device</span><button class="btn" id="nEnable" data-t="nOn">Turn on</button></div>
+  <div id="nList2"></div></div></div>
 <div class="modal" id="pm"><div class="mc glass">
   <div class="phd"><h2 data-t="pTitle">Profile & Settings</h2><button class="ghost" id="pClose">✕</button></div>
   <div id="pAcc" hidden>
@@ -202,6 +315,7 @@ input,select{font-size:16px}
     <div class="srow"><span data-t="pLang">Language</span><button class="ghost langb">हिंदी</button></div>
     <div class="srow"><span data-t="pTheme">Theme</span><button class="ghost" id="stTheme">🌗</button></div>
     <div class="srow"><span data-t="pSnd">Sound</span><button class="ghost" id="stSnd">🔊</button></div>
+    <div class="srow"><span data-t="pNot">Expiry reminders</span><button class="ghost" id="stNot">Off</button></div>
     <div class="srow"><span data-t="pInst">Install app</span><button class="ghost" id="stInst" data-t="instB">Install</button></div>
   </div>
   <button class="ghost dg" id="out" hidden data-t="signout" style="width:100%;margin-top:8px;padding:11px">Sign out</button>
@@ -225,8 +339,8 @@ var GK="expiry-tracker-v2",KEY=GK,items=[],sf="all",cf="All",editId=null,ref=nul
 function $(i){return document.getElementById(i)}
 var who="",lang="en",snd=true;try{lang=localStorage.getItem("lang")||"en";snd=localStorage.getItem("snd")!=="0"}catch(e){}
 var CATH={All:"सभी",Medicine:"दवाई",Food:"खाना",Cosmetics:"कॉस्मेटिक",Home:"घर",Baby:"बच्चा",Pet:"पालतू",Electronics:"गैजेट",Document:"दस्तावेज़",Other:"अन्य"};
-var D={en:{loginH:"🔐 Login",nHome:"Home",nMe:"Profile",pTitle:"Profile & Settings",pEdit:"Display name",pSave:"Save",pPw:"Change password",pOld:"Current password",pNew:"New password (min 6)",pNew2:"Confirm new password",pUpd:"Update password",pReset:"Forgot current password? Email me a reset link",pGoog:"You signed in with Google, so your password is managed by your Google account.",pGuestT:"You are in guest mode. Login to save your items online and use them on any device.",pGuestN:"Guest",pSet:"Settings",pLang:"Language",pTheme:"Theme",pSnd:"Sound",pInst:"Install app",pvEmail:"Signed in with Email & Password",pvGoogle:"Signed in with Google",pwReq:"Enter your current and new password.",pwShort:"New password must be at least 6 characters.",pwMis:"New passwords do not match.",pwOk:"Password updated ✅",rstOk:"Reset link sent. Check your email.",dnOk:"Name updated ✅",pDnP:"Your name",instT:"Install app",instD:"Use it like a real app from your home screen.",instIosD:"Tap Share ⬆️, then Add to Home Screen.",instB:"Install",instOk:"App installed 🎉",instMenu:"Open your browser menu and choose Install app or Add to Home screen.",tag:"Never let medicines, food or essentials expire again.",login:"Login",signup:"Sign up",google:"Continue with Google",or:"or use email",email:"Email",pass:"Password",ph6:"At least 6 characters",forgot:"Forgot password?",signout:"Sign out",add:"＋ Add item",kAll:"All items",kRed:"Expired",kAmb:"Within 7 days",kSafe:"Safe",c1:"🍩 Status overview",c2:"📊 Expiring in next 6 months",c3:"🏷️ By category",search:"Search by name or location",soon:"Soonest first",late:"Latest first",az:"Name A-Z",items:"📋 Your items",xl:"📊 Excel",pdf:"📄 PDF",lName:"✏️ Item name",lCat:"🏷️ Category",lDate:"📅 Expiry date",lAlert:"🔔 Alert (days before)",lNote:"📍 Location / note",pName:"e.g. Paracetamol 500mg, Amul Butter",pNote:"Kitchen shelf",save:"Add item",saveEdit:"Save changes",cancel:"Cancel",mtAdd:"Add new item",mtEdit:"Edit item",edit:"Edit",del:"Delete",conf:"Confirm?",noMatch:"No items match your filters.",noItems:"Nothing tracked yet. Add your first item, or see how it looks with samples.",demo:"✨ Load sample items",tAdd:"Item added 🎉",tUp:"Item updated ✅",tDel:"Item deleted 🗑️",req:"Name and expiry date are required.",bRed:"⚠️  {c} item(s) expired. Please stop using and dispose of safely.",bAmb:"⏰  {c} item(s) expire within 7 days.",bOk:"🎉  Everything looks fresh and safe!",gm:"Good morning ☀️",ga:"Good afternoon 🌤️",ge:"Good evening 🌙",attn:"need attention",lExp:"Expired",lAmb:"≤ 7 days",lYel:"Upcoming",lOk:"Good",over:"Overdue",mons:"Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec",exp:"❌ Expired {n}d ago",today:"🚨 Expires today",left:"{n} days left",s_cloud:"Cloud sync on",s_save:"Saving",s_err:"Sync error",s_wait:"Connecting",setup:"⚙️ Setup pending: open firebase-config.js, paste your Firebase config, then redeploy.",syncErr:"Could not save to cloud. Check Firestore rules.",newq:"New here?",haveq:"Already have an account?",gmsg:"👤 Guest mode: your items are saved in this browser. Login to back them up online and open them on any device.",loginBtn:"🔐 Login / Sign up",skip:"Continue as guest",tMerge:"Your items are now saved to your account ☁️",s_guest:"Guest mode",st_red:"Expired",st_amb:"Within 7 days",st_yel:"Upcoming",st_ok:"Good",hName:"Item",hCat:"Category",hNote:"Location / Note",hDate:"Expiry date",hDays:"Days left",hStatus:"Status",noData:"Add some items first",done:"Report downloaded ✅",pdfErr:"PDF could not be created",rTitle:"Expiry Report",rGen:"Generated"},
-hi:{loginH:"🔐 लॉगिन",nHome:"होम",nMe:"प्रोफ़ाइल",pTitle:"प्रोफ़ाइल और सेटिंग",pEdit:"दिखने वाला नाम",pSave:"सहेजें",pPw:"पासवर्ड बदलें",pOld:"मौजूदा पासवर्ड",pNew:"नया पासवर्ड (कम से कम 6)",pNew2:"नया पासवर्ड दोबारा",pUpd:"पासवर्ड अपडेट करें",pReset:"मौजूदा पासवर्ड भूल गए? रीसेट लिंक ईमेल पर पाएं",pGoog:"आपने Google से साइन इन किया है, इसलिए पासवर्ड आपके Google अकाउंट से ही बदलता है।",pGuestT:"आप गेस्ट मोड में हैं। आइटम ऑनलाइन सेव करने और किसी भी डिवाइस पर देखने के लिए लॉगिन करें।",pGuestN:"गेस्ट",pSet:"सेटिंग",pLang:"भाषा",pTheme:"थीम",pSnd:"आवाज़",pInst:"ऐप इंस्टॉल करें",pvEmail:"ईमेल और पासवर्ड से साइन इन",pvGoogle:"Google से साइन इन",pwReq:"मौजूदा और नया पासवर्ड भरें।",pwShort:"नया पासवर्ड कम से कम 6 अक्षर का हो।",pwMis:"नए पासवर्ड मेल नहीं खाते।",pwOk:"पासवर्ड अपडेट हो गया ✅",rstOk:"रीसेट लिंक भेज दिया। ईमेल देखें।",dnOk:"नाम अपडेट हो गया ✅",pDnP:"आपका नाम",instT:"ऐप इंस्टॉल करें",instD:"इसे होम स्क्रीन से असली ऐप की तरह चलाएं।",instIosD:"Share ⬆️ दबाएं, फिर Add to Home Screen चुनें।",instB:"इंस्टॉल",instOk:"ऐप इंस्टॉल हो गया 🎉",instMenu:"ब्राउज़र मेन्यू खोलकर Install app या Add to Home screen चुनें।",tag:"दवाइयाँ, खाना या ज़रूरी सामान कभी एक्सपायर न होने दें।",login:"लॉगिन",signup:"साइन अप",google:"Google से जारी रखें",or:"या ईमेल से",email:"ईमेल",pass:"पासवर्ड",ph6:"कम से कम 6 अक्षर",forgot:"पासवर्ड भूल गए?",signout:"साइन आउट",add:"＋ आइटम जोड़ें",kAll:"सभी आइटम",kRed:"एक्सपायर",kAmb:"7 दिन में",kSafe:"सुरक्षित",c1:"🍩 स्थिति सारांश",c2:"📊 अगले 6 महीनों में एक्सपायरी",c3:"🏷️ श्रेणी अनुसार",search:"नाम या जगह से खोजें",soon:"जल्दी वाले पहले",late:"देर वाले पहले",az:"नाम A-Z",items:"📋 आपके आइटम",xl:"📊 एक्सेल",pdf:"📄 पीडीएफ",lName:"✏️ आइटम का नाम",lCat:"🏷️ श्रेणी",lDate:"📅 एक्सपायरी तारीख",lAlert:"🔔 अलर्ट (कितने दिन पहले)",lNote:"📍 जगह / नोट",pName:"जैसे पैरासिटामोल 500mg, अमूल बटर",pNote:"रसोई की अलमारी",save:"आइटम जोड़ें",saveEdit:"बदलाव सहेजें",cancel:"रद्द करें",mtAdd:"नया आइटम जोड़ें",mtEdit:"आइटम बदलें",edit:"बदलें",del:"हटाएं",conf:"पक्का?",noMatch:"फ़िल्टर से कोई आइटम नहीं मिला।",noItems:"अभी कुछ नहीं जोड़ा। पहला आइटम जोड़ें या सैंपल देखें।",demo:"✨ सैंपल आइटम लोड करें",tAdd:"आइटम जुड़ गया 🎉",tUp:"आइटम अपडेट हुआ ✅",tDel:"आइटम हट गया 🗑️",req:"नाम और एक्सपायरी तारीख ज़रूरी है।",bRed:"⚠️  {c} आइटम एक्सपायर हो चुके हैं। इस्तेमाल बंद करें और सुरक्षित तरीके से फेंकें।",bAmb:"⏰  {c} आइटम 7 दिन में एक्सपायर होंगे।",bOk:"🎉  सब कुछ ताज़ा और सुरक्षित है!",gm:"सुप्रभात ☀️",ga:"नमस्कार 🌤️",ge:"शुभ संध्या 🌙",attn:"पर ध्यान दें",lExp:"एक्सपायर",lAmb:"≤ 7 दिन",lYel:"जल्द",lOk:"ठीक",over:"बीत चुके",mons:"जन,फ़र,मार्च,अप्रै,मई,जून,जुल,अग,सित,अक्टू,नव,दिस",exp:"❌ {n} दिन पहले एक्सपायर",today:"🚨 आज एक्सपायर",left:"{n} दिन बाकी",s_cloud:"क्लाउड सिंक चालू",s_save:"सहेज रहे हैं",s_err:"सिंक में दिक्कत",s_wait:"कनेक्ट हो रहा है",setup:"⚙️ सेटअप बाकी है: firebase-config.js खोलकर अपनी Firebase config डालें, फिर दोबारा deploy करें।",syncErr:"क्लाउड में सेव नहीं हुआ। Firestore rules जांचें।",newq:"नए हैं?",haveq:"पहले से अकाउंट है?",gmsg:"👤 गेस्ट मोड: आपके आइटम इसी ब्राउज़र में सेव हैं। ऑनलाइन बैकअप और किसी भी डिवाइस पर देखने के लिए लॉगिन करें।",loginBtn:"🔐 लॉगिन / साइन अप",skip:"गेस्ट के रूप में जारी रखें",tMerge:"आपके आइटम अब आपके अकाउंट में सेव हो गए ☁️",s_guest:"गेस्ट मोड",st_red:"एक्सपायर",st_amb:"7 दिन में",st_yel:"जल्द",st_ok:"ठीक",hName:"आइटम",hCat:"श्रेणी",hNote:"जगह / नोट",hDate:"एक्सपायरी तारीख",hDays:"बचे दिन",hStatus:"स्थिति",noData:"पहले कुछ आइटम जोड़ें",done:"रिपोर्ट डाउनलोड हो गई ✅",pdfErr:"PDF नहीं बन सका",rTitle:"एक्सपायरी रिपोर्ट",rGen:"तारीख"}};
+var D={en:{nTitle:"Reminders",nAsk:"Get expiry reminders on this device",nOn:"Turn on",pNot:"Expiry reminders",nOnS:"On",nOffS:"Off",nNo:"This browser does not support notifications.",nDen:"Notifications are blocked. Allow them in your browser or phone settings.",nOnT:"Reminders turned on 🔔",nOffT:"Reminders turned off",nSum:"{n} item(s) need your attention",nTestT:"Reminders are on 🔔",nTestB:"We will remind you about items that are expired or close to expiry.",aTitle:"Needs attention",aAll:"View all",nNone:"All clear! Nothing needs attention 🎉",nAlert:"Alerts",nList:"Items",loginH:"🔐 Login",nHome:"Home",nMe:"Profile",pTitle:"Profile & Settings",pEdit:"Display name",pSave:"Save",pPw:"Change password",pOld:"Current password",pNew:"New password (min 6)",pNew2:"Confirm new password",pUpd:"Update password",pReset:"Forgot current password? Email me a reset link",pGoog:"You signed in with Google, so your password is managed by your Google account.",pGuestT:"You are in guest mode. Login to save your items online and use them on any device.",pGuestN:"Guest",pSet:"Settings",pLang:"Language",pTheme:"Theme",pSnd:"Sound",pInst:"Install app",pvEmail:"Signed in with Email & Password",pvGoogle:"Signed in with Google",pwReq:"Enter your current and new password.",pwShort:"New password must be at least 6 characters.",pwMis:"New passwords do not match.",pwOk:"Password updated ✅",rstOk:"Reset link sent. Check your email.",dnOk:"Name updated ✅",pDnP:"Your name",instT:"Install app",instD:"Use it like a real app from your home screen.",instIosD:"Tap Share ⬆️, then Add to Home Screen.",instB:"Install",instOk:"App installed 🎉",instMenu:"Open your browser menu and choose Install app or Add to Home screen.",tag:"Never let medicines, food or essentials expire again.",login:"Login",signup:"Sign up",google:"Continue with Google",or:"or use email",email:"Email",pass:"Password",ph6:"At least 6 characters",forgot:"Forgot password?",signout:"Sign out",add:"＋ Add item",kAll:"All items",kRed:"Expired",kAmb:"Within 7 days",kSafe:"Safe",c1:"🍩 Status overview",c2:"📊 Expiring in next 6 months",c3:"🏷️ By category",search:"Search by name or location",soon:"Soonest first",late:"Latest first",az:"Name A-Z",items:"📋 Your items",xl:"📊 Excel",pdf:"📄 PDF",lName:"✏️ Item name",lCat:"🏷️ Category",lDate:"📅 Expiry date",lAlert:"🔔 Alert (days before)",lNote:"📍 Location / note",pName:"e.g. Paracetamol 500mg, Amul Butter",pNote:"Kitchen shelf",save:"Add item",saveEdit:"Save changes",cancel:"Cancel",mtAdd:"Add new item",mtEdit:"Edit item",edit:"Edit",del:"Delete",conf:"Confirm?",noMatch:"No items match your filters.",noItems:"Nothing tracked yet. Add your first item, or see how it looks with samples.",demo:"✨ Load sample items",tAdd:"Item added 🎉",tUp:"Item updated ✅",tDel:"Item deleted 🗑️",req:"Name and expiry date are required.",bRed:"⚠️  {c} item(s) expired. Please stop using and dispose of safely.",bAmb:"⏰  {c} item(s) expire within 7 days.",bOk:"🎉  Everything looks fresh and safe!",gm:"Good morning ☀️",ga:"Good afternoon 🌤️",ge:"Good evening 🌙",attn:"need attention",lExp:"Expired",lAmb:"≤ 7 days",lYel:"Upcoming",lOk:"Good",over:"Overdue",mons:"Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec",exp:"❌ Expired {n}d ago",today:"🚨 Expires today",left:"{n} days left",s_cloud:"Cloud sync on",s_save:"Saving",s_err:"Sync error",s_wait:"Connecting",setup:"⚙️ Setup pending: open firebase-config.js, paste your Firebase config, then redeploy.",syncErr:"Could not save to cloud. Check Firestore rules.",newq:"New here?",haveq:"Already have an account?",gmsg:"👤 Guest mode: your items are saved in this browser. Login to back them up online and open them on any device.",loginBtn:"🔐 Login / Sign up",skip:"Continue as guest",tMerge:"Your items are now saved to your account ☁️",s_guest:"Guest mode",st_red:"Expired",st_amb:"Within 7 days",st_yel:"Upcoming",st_ok:"Good",hName:"Item",hCat:"Category",hNote:"Location / Note",hDate:"Expiry date",hDays:"Days left",hStatus:"Status",noData:"Add some items first",done:"Report downloaded ✅",pdfErr:"PDF could not be created",rTitle:"Expiry Report",rGen:"Generated"},
+hi:{nTitle:"रिमाइंडर",nAsk:"इस डिवाइस पर एक्सपायरी रिमाइंडर पाएं",nOn:"चालू करें",pNot:"एक्सपायरी रिमाइंडर",nOnS:"चालू",nOffS:"बंद",nNo:"यह ब्राउज़र नोटिफिकेशन सपोर्ट नहीं करता।",nDen:"नोटिफिकेशन ब्लॉक हैं। ब्राउज़र या फ़ोन की सेटिंग में इन्हें अनुमति दें।",nOnT:"रिमाइंडर चालू हो गए 🔔",nOffT:"रिमाइंडर बंद हो गए",nSum:"{n} आइटम पर आपका ध्यान चाहिए",nTestT:"रिमाइंडर चालू हैं 🔔",nTestB:"एक्सपायर या एक्सपायरी के पास वाले आइटम की हम आपको याद दिलाएंगे।",aTitle:"ध्यान देने वाले",aAll:"सभी देखें",nNone:"सब ठीक है! किसी पर ध्यान देने की ज़रूरत नहीं 🎉",nAlert:"अलर्ट",nList:"आइटम",loginH:"🔐 लॉगिन",nHome:"होम",nMe:"प्रोफ़ाइल",pTitle:"प्रोफ़ाइल और सेटिंग",pEdit:"दिखने वाला नाम",pSave:"सहेजें",pPw:"पासवर्ड बदलें",pOld:"मौजूदा पासवर्ड",pNew:"नया पासवर्ड (कम से कम 6)",pNew2:"नया पासवर्ड दोबारा",pUpd:"पासवर्ड अपडेट करें",pReset:"मौजूदा पासवर्ड भूल गए? रीसेट लिंक ईमेल पर पाएं",pGoog:"आपने Google से साइन इन किया है, इसलिए पासवर्ड आपके Google अकाउंट से ही बदलता है।",pGuestT:"आप गेस्ट मोड में हैं। आइटम ऑनलाइन सेव करने और किसी भी डिवाइस पर देखने के लिए लॉगिन करें।",pGuestN:"गेस्ट",pSet:"सेटिंग",pLang:"भाषा",pTheme:"थीम",pSnd:"आवाज़",pInst:"ऐप इंस्टॉल करें",pvEmail:"ईमेल और पासवर्ड से साइन इन",pvGoogle:"Google से साइन इन",pwReq:"मौजूदा और नया पासवर्ड भरें।",pwShort:"नया पासवर्ड कम से कम 6 अक्षर का हो।",pwMis:"नए पासवर्ड मेल नहीं खाते।",pwOk:"पासवर्ड अपडेट हो गया ✅",rstOk:"रीसेट लिंक भेज दिया। ईमेल देखें।",dnOk:"नाम अपडेट हो गया ✅",pDnP:"आपका नाम",instT:"ऐप इंस्टॉल करें",instD:"इसे होम स्क्रीन से असली ऐप की तरह चलाएं।",instIosD:"Share ⬆️ दबाएं, फिर Add to Home Screen चुनें।",instB:"इंस्टॉल",instOk:"ऐप इंस्टॉल हो गया 🎉",instMenu:"ब्राउज़र मेन्यू खोलकर Install app या Add to Home screen चुनें।",tag:"दवाइयाँ, खाना या ज़रूरी सामान कभी एक्सपायर न होने दें।",login:"लॉगिन",signup:"साइन अप",google:"Google से जारी रखें",or:"या ईमेल से",email:"ईमेल",pass:"पासवर्ड",ph6:"कम से कम 6 अक्षर",forgot:"पासवर्ड भूल गए?",signout:"साइन आउट",add:"＋ आइटम जोड़ें",kAll:"सभी आइटम",kRed:"एक्सपायर",kAmb:"7 दिन में",kSafe:"सुरक्षित",c1:"🍩 स्थिति सारांश",c2:"📊 अगले 6 महीनों में एक्सपायरी",c3:"🏷️ श्रेणी अनुसार",search:"नाम या जगह से खोजें",soon:"जल्दी वाले पहले",late:"देर वाले पहले",az:"नाम A-Z",items:"📋 आपके आइटम",xl:"📊 एक्सेल",pdf:"📄 पीडीएफ",lName:"✏️ आइटम का नाम",lCat:"🏷️ श्रेणी",lDate:"📅 एक्सपायरी तारीख",lAlert:"🔔 अलर्ट (कितने दिन पहले)",lNote:"📍 जगह / नोट",pName:"जैसे पैरासिटामोल 500mg, अमूल बटर",pNote:"रसोई की अलमारी",save:"आइटम जोड़ें",saveEdit:"बदलाव सहेजें",cancel:"रद्द करें",mtAdd:"नया आइटम जोड़ें",mtEdit:"आइटम बदलें",edit:"बदलें",del:"हटाएं",conf:"पक्का?",noMatch:"फ़िल्टर से कोई आइटम नहीं मिला।",noItems:"अभी कुछ नहीं जोड़ा। पहला आइटम जोड़ें या सैंपल देखें।",demo:"✨ सैंपल आइटम लोड करें",tAdd:"आइटम जुड़ गया 🎉",tUp:"आइटम अपडेट हुआ ✅",tDel:"आइटम हट गया 🗑️",req:"नाम और एक्सपायरी तारीख ज़रूरी है।",bRed:"⚠️  {c} आइटम एक्सपायर हो चुके हैं। इस्तेमाल बंद करें और सुरक्षित तरीके से फेंकें।",bAmb:"⏰  {c} आइटम 7 दिन में एक्सपायर होंगे।",bOk:"🎉  सब कुछ ताज़ा और सुरक्षित है!",gm:"सुप्रभात ☀️",ga:"नमस्कार 🌤️",ge:"शुभ संध्या 🌙",attn:"पर ध्यान दें",lExp:"एक्सपायर",lAmb:"≤ 7 दिन",lYel:"जल्द",lOk:"ठीक",over:"बीत चुके",mons:"जन,फ़र,मार्च,अप्रै,मई,जून,जुल,अग,सित,अक्टू,नव,दिस",exp:"❌ {n} दिन पहले एक्सपायर",today:"🚨 आज एक्सपायर",left:"{n} दिन बाकी",s_cloud:"क्लाउड सिंक चालू",s_save:"सहेज रहे हैं",s_err:"सिंक में दिक्कत",s_wait:"कनेक्ट हो रहा है",setup:"⚙️ सेटअप बाकी है: firebase-config.js खोलकर अपनी Firebase config डालें, फिर दोबारा deploy करें।",syncErr:"क्लाउड में सेव नहीं हुआ। Firestore rules जांचें।",newq:"नए हैं?",haveq:"पहले से अकाउंट है?",gmsg:"👤 गेस्ट मोड: आपके आइटम इसी ब्राउज़र में सेव हैं। ऑनलाइन बैकअप और किसी भी डिवाइस पर देखने के लिए लॉगिन करें।",loginBtn:"🔐 लॉगिन / साइन अप",skip:"गेस्ट के रूप में जारी रखें",tMerge:"आपके आइटम अब आपके अकाउंट में सेव हो गए ☁️",s_guest:"गेस्ट मोड",st_red:"एक्सपायर",st_amb:"7 दिन में",st_yel:"जल्द",st_ok:"ठीक",hName:"आइटम",hCat:"श्रेणी",hNote:"जगह / नोट",hDate:"एक्सपायरी तारीख",hDays:"बचे दिन",hStatus:"स्थिति",noData:"पहले कुछ आइटम जोड़ें",done:"रिपोर्ट डाउनलोड हो गई ✅",pdfErr:"PDF नहीं बन सका",rTitle:"एक्सपायरी रिपोर्ट",rGen:"तारीख"}};
 function tr(k,v){var s=D[lang][k];if(s==null)s=D.en[k];if(s==null)s=k;if(v)for(var x in v)s=s.replace("{"+x+"}",v[x]);return s}
 function LOC(){return lang==="hi"?"hi-IN":"en-GB"}
 function swt(){$("swT").textContent=tr(mode==="in"?"newq":"haveq");$("swB").textContent=tr(mode==="in"?"signup":"login")}
@@ -237,7 +351,18 @@ function applyLang(){document.documentElement.lang=lang;
   [].forEach.call(document.querySelectorAll("[data-p]"),function(e){e.placeholder=tr(e.getAttribute("data-p"))});
   [].forEach.call(document.querySelectorAll(".langb"),function(b){b.textContent=lang==="en"?"हिंदी":"English"});
   $("save").textContent=editId?tr("saveEdit"):tr("save");$("mt").textContent=editId?tr("mtEdit"):tr("mtAdd");
-  $("go").textContent=mode==="in"?tr("login"):tr("signup");swt();fillCat();setSync(setSync.k);instUI();if(!$("app").hidden)render(false)}
+  $("go").textContent=mode==="in"?tr("login"):tr("signup");swt();fillCat();setSync(setSync.k);instUI();notUI();if(typeof setUsageMode==="function")
+// Desktop sidebar mirrors the existing controls; navigation scrolls to existing sections.
+(function(){
+ var sideHome=document.getElementById("sideHomeMode"),sideMed=document.getElementById("sideMedMode"),sideTheme=document.getElementById("sideTheme");
+ if(sideHome)sideHome.addEventListener("click",function(){document.getElementById("homeMode").click();sideHome.classList.add("selected");sideMed.classList.remove("selected")});
+ if(sideMed)sideMed.addEventListener("click",function(){document.getElementById("medMode").click();sideMed.classList.add("selected");sideHome.classList.remove("selected")});
+ if(sideTheme)sideTheme.addEventListener("click",function(){document.getElementById("theme").click()});
+ document.querySelectorAll(".side-link").forEach(function(a){a.addEventListener("click",function(){document.querySelectorAll(".side-link").forEach(function(x){x.classList.remove("active")});a.classList.add("active")})});
+ var syncSide=function(){var n=document.getElementById("uname"),sn=document.getElementById("sideName");if(n&&sn&&n.textContent.trim())sn.textContent=n.textContent.trim();var b=document.getElementById("bdg"),c=document.getElementById("sideAlertCount");if(b&&c)c.textContent=b.hidden?"0":(b.textContent||"!")};
+ syncSide();setInterval(syncSide,2500);
+})();
+setUsageMode(usageMode);if(!$("app").hidden)render(false)}
 var AC=null;
 function beep(f1,f2,d,v){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();var o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime;o.type="sine";o.frequency.setValueAtTime(f1,t);o.frequency.exponentialRampToValueAtTime(f2,t+d);g.gain.setValueAtTime(v||.07,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(AC.destination);o.start();o.stop(t+d)}catch(e){}}
 function sfx(k){if(!snd)return;if(k==="ok"){setTimeout(function(){beep(520,880,.16);setTimeout(function(){beep(880,1175,.2)},100)},90)}else if(k==="del"){setTimeout(function(){beep(420,150,.22)},90)}else if(k==="err"){setTimeout(function(){beep(220,140,.25,.09)},90)}else beep(720,540,.07,.05)}
@@ -333,7 +458,7 @@ function render(anim){
   var c={red:0,amb:0,yel:0,ok:0};items.forEach(function(i){c[st(i)]++});
   count("tot",items.length);count("k0",items.length);count("k1",c.red);count("k2",c.amb);count("k3",c.ok+c.yel);
   [].forEach.call(document.querySelectorAll(".kpi"),function(b){b.classList.toggle("on",b.getAttribute("data-s")===sf)});
-  charts(c);
+  charts(c);alerts();snap();clearTimeout(nt);nt=setTimeout(notifyCheck,2500);
   var b=$("banner");b.className="banner";
   if(c.red){b.textContent=tr("bRed",{c:c.red});b.classList.add("show")}
   else if(c.amb){b.textContent=tr("bAmb",{c:c.amb});b.classList.add("show","warn")}
@@ -344,20 +469,20 @@ function render(anim){
   var l=items.filter(function(i){return match(i)&&(cf==="All"||i.cat===cf)&&(!q||(i.name+" "+(i.note||"")).toLowerCase().indexOf(q)>-1)}).sort(function(a,b){return so==="az"?a.name.localeCompare(b.name):so==="late"?(a.date<b.date?1:-1):(a.date<b.date?-1:1)});
   $("list").className="grid2"+(anim?" anim":"");
   $("list").innerHTML=l.length?l.map(function(i,n){var d=days(i.date);
-    return'<div class="item glass '+st(i)+'" style="--i:'+Math.min(n,10)+'"><div class="ico" style="background:linear-gradient(135deg,'+cc(i.cat)+')">'+(CATS[i.cat]||"📦")+'</div><div><div class="name">'+esc(i.name)+'</div><div class="meta">'+esc(cn(i.cat))+(i.note?" · "+esc(i.note):"")+'</div></div><span class="badge">'+lbl(d)+'</span><div class="bar"><i style="width:'+(d<0?100:Math.max(6,Math.min(100,d/1.8)))+'%"></i></div><div class="foot"><span>📅 '+fd(i.date)+'</span><span class="acts"><button class="ghost" data-e="'+esc(i.id)+'">'+tr("edit")+'</button><button class="ghost dg" data-d="'+esc(i.id)+'">'+tr("del")+'</button></span></div></div>'}).join(""):
+    return'<div class="item glass '+st(i)+'" style="--i:'+Math.min(n,10)+'"><div class="ico" style="background:linear-gradient(135deg,'+cc(i.cat)+')">'+(CATS[i.cat]||"📦")+'</div><div><div class="name">'+esc(i.name)+'</div><div class="meta">'+esc(cn(i.cat))+(i.note?" · "+esc(i.note):"")+(i.batch?" · Batch: "+esc(i.batch):"")+(i.quantity!=null?" · Qty: "+esc(String(i.quantity))+" "+esc(i.unit||"pcs"):"")+'</div></div><span class="badge">'+lbl(d)+'</span><div class="bar"><i style="width:'+(d<0?100:Math.max(6,Math.min(100,d/1.8)))+'%"></i></div><div class="foot"><span>📅 '+fd(i.date)+'</span><span class="acts"><button class="ghost" data-e="'+esc(i.id)+'">'+tr("edit")+'</button><button class="ghost dg" data-d="'+esc(i.id)+'">'+tr("del")+'</button></span></div></div>'}).join(""):
     '<div class="empty"><b>🌿</b>'+(items.length?tr("noMatch"):tr("noItems")+'<br><br><button class="btn" id="demo">'+tr("demo")+'</button>')+'</div>'}
 /* ---------- form ---------- */
 function openM(){$("modal").classList.add("open");setTimeout(function(){$("name").focus()},200)}
-function closeM(){$("modal").classList.remove("open");editId=null;$("name").value="";$("note").value="";$("err").textContent="";$("save").textContent=tr("save");$("mt").textContent=tr("mtAdd")}
+function closeM(){$("modal").classList.remove("open");editId=null;$("name").value="";$("note").value="";$("batch").value="";$("quantity").value="";$("unit").value="pcs";$("mrp").value="";$("supplier").value="";$("barcode").value="";$("scanNote").hidden=true;$("err").textContent="";$("save").textContent=tr("save");$("mt").textContent=tr("mtAdd")}
 $("addBtn").onclick=$("navAdd").onclick=openM;$("cancel").onclick=closeM;
-$("modal").onclick=function(e){if(e.target===$("modal"))closeM()};document.onkeydown=function(e){if(e.key==="Escape"){closeM();closeP()}};
+$("modal").onclick=function(e){if(e.target===$("modal"))closeM()};document.onkeydown=function(e){if(e.key==="Escape"){closeM();closeP();closeN()}};
 $("save").onclick=function(){var n=$("name").value.trim(),d=$("date").value;if(!n||!d){$("err").textContent=tr("req");sfx("err");return}
-  var o={name:n,cat:$("cat").value,date:d,alert:parseInt($("alert").value)||30,note:$("note").value.trim()},ed=editId;
+  var o={name:n,cat:$("cat").value,date:d,alert:parseInt($("alert").value)||30,note:$("note").value.trim(),batch:$("batch").value.trim(),quantity:$("quantity").value===""?null:Number($("quantity").value),unit:$("unit").value,mrp:$("mrp").value===""?null:Number($("mrp").value),supplier:$("supplier").value.trim(),barcode:$("barcode").value.trim()},ed=editId;
   if(ed){items.forEach(function(i){if(i.id===ed)for(var k in o)i[k]=o[k]})}else{o.id=Date.now().toString(36)+Math.random().toString(36).slice(2,5);items.push(o)}
   closeM();persist();render(true);toast(tr(ed?"tUp":"tAdd"))};
 $("list").onclick=function(e){var t=e.target,ed=t.getAttribute("data-e"),de=t.getAttribute("data-d");
   if(t.id==="demo"){[["Paracetamol 500mg","Medicine",-3,"Medicine box"],["Amul Butter","Food",4,"Fridge"],["Sunscreen SPF 50","Cosmetics",18,"Bathroom"],["Dettol Handwash","Home",75,"Kitchen"],["Baby Formula","Baby",40,"Pantry"],["Dog Vaccine Card","Pet",160,"Drawer"],["Car Insurance","Document",240,"Folder"],["Smoke Detector Battery","Electronics",300,"Hallway"]].forEach(function(x,k){items.push({id:"s"+k+Date.now().toString(36),name:x[0],cat:x[1],date:iso(x[2]),alert:30,note:x[3]})});persist();render(true);return}
-  if(ed){var i=items.filter(function(x){return x.id===ed})[0];if(!i)return;editId=ed;$("name").value=i.name;$("cat").value=i.cat;$("date").value=i.date;$("alert").value=i.alert;$("note").value=i.note||"";$("save").textContent=tr("saveEdit");$("mt").textContent=tr("mtEdit");openM()}
+  if(ed){var i=items.filter(function(x){return x.id===ed})[0];if(!i)return;editId=ed;$("name").value=i.name;$("cat").value=i.cat;$("date").value=i.date;$("alert").value=i.alert;$("note").value=i.note||"";$("batch").value=i.batch||"";$("quantity").value=i.quantity==null?"":i.quantity;$("unit").value=i.unit||"pcs";$("mrp").value=i.mrp==null?"":i.mrp;$("supplier").value=i.supplier||"";$("barcode").value=i.barcode||"";$("save").textContent=tr("saveEdit");$("mt").textContent=tr("mtEdit");openM()}
   if(de){if(t.getAttribute("data-sure")){items=items.filter(function(x){return x.id!==de});persist();render(false);toast(tr("tDel"),"del")}else{t.setAttribute("data-sure","1");t.textContent=tr("conf");setTimeout(function(){render(false)},2500)}}};
 $("kpis").onclick=function(e){var b=e.target.closest("[data-s]");if(b){sf=b.getAttribute("data-s");render(true)}};
 $("chips").onclick=function(e){var b=e.target.closest("[data-c]");if(b){cf=b.getAttribute("data-c");render(true)}};
@@ -398,7 +523,57 @@ window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();dip
 window.addEventListener("appinstalled",function(){dip=null;instUI();toast(tr("instOk"))});
 $("instBtn").onclick=$("stInst").onclick=doInstall;$("instX").onclick=function(){try{localStorage.setItem("instX",Date.now())}catch(e){}instUI()};
 if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
-applyLang();instUI();boot();
+/* ---- reminders / notifications ---- */
+var nt;
+function due(){return srt().filter(function(i){return st(i)!=="ok"})}
+function plain(n){return lbl(n).replace(/^[^0-9A-Za-z\u0900-\u097F]+/,"")}
+function rowH(i){return'<div class="ar '+st(i)+'"><div class="aico" style="background:linear-gradient(135deg,'+cc(i.cat)+')">'+(CATS[i.cat]||"📦")+'</div><div class="ainfo"><b>'+esc(i.name)+'</b><span>'+esc(cn(i.cat))+(i.note?" · "+esc(i.note):"")+(i.batch?" · Batch: "+esc(i.batch):"")+(i.quantity!=null?" · Qty: "+esc(String(i.quantity))+" "+esc(i.unit||"pcs"):"")+'</span></div><span class="abd">'+esc(plain(days(i.date)))+'</span></div>'}
+function alerts(){var d=due(),n=d.length,red=d.filter(function(i){return st(i)==="red"}).length;
+  [$("bdg"),$("nbdg")].forEach(function(b){b.hidden=!n;b.textContent=n>9?"9+":n;b.className="bdg"+(red?" r":"")});
+  var a=$("attn");a.hidden=!n;if(n)a.innerHTML='<div class="ah"><b>'+tr("aTitle")+'</b><button class="lnk" id="aAll">'+tr("aAll")+'</button></div>'+d.slice(0,3).map(rowH).join("");
+  $("nList2").innerHTML=n?d.map(rowH).join(""):'<div class="empty" style="padding:30px 10px">'+tr("nNone")+'</div>'}
+function notifOn(){try{return"Notification"in window&&Notification.permission==="granted"&&localStorage.getItem("notif")!=="0"}catch(e){return false}}
+function notUI(){var on=notifOn(),sup="Notification"in window;$("stNot").textContent=!sup?"—":on?tr("nOnS"):tr("nOffS");$("stNot").className="ghost"+(on?" on":"");$("nOpt").hidden=on||!sup}
+function showNotif(t,b){var o={body:b,icon:"icon-192.png",badge:"icon-192.png",tag:"expiry"};
+  Promise.race([navigator.serviceWorker.ready,new Promise(function(_,no){setTimeout(no,1500)})]).then(function(r){return r.showNotification(t,o)}).catch(function(){try{new Notification(t,o)}catch(e){}})}
+function notifyCheck(){if(!notifOn())return;var d=due();if(!d.length)return;var td=iso(0);try{if(localStorage.getItem("nlast")===td)return;localStorage.setItem("nlast",td)}catch(e){}
+  showNotif(tr("nSum",{n:d.length}),d.slice(0,4).map(function(i){return i.name+" — "+plain(days(i.date))}).join("\n")+(d.length>4?"\n+"+(d.length-4):""))}
+function snap(){try{if(!window.caches)return;caches.open("expiry-data").then(function(c){return c.put("reminders.json",new Response(JSON.stringify({on:notifOn(),lang:lang,items:items.map(function(i){return{n:i.name,d:i.date,a:i.alert}})}),{headers:{"Content-Type":"application/json"}}))}).catch(function(){})}catch(e){}}
+function regPeriodic(){if(!notifOn()||!navigator.serviceWorker)return;navigator.serviceWorker.ready.then(function(r){if(r.periodicSync)r.periodicSync.register("expiry-check",{minInterval:12*36e5}).catch(function(){})}).catch(function(){})}
+function enableNot(){if(!("Notification"in window)){toast(tr("nNo"),"err",5000);return}
+  if(Notification.permission==="denied"){toast(tr("nDen"),"err",6000);return}
+  function go(on){try{localStorage.setItem("notif",on?"1":"0")}catch(e){}notUI();snap();if(on){regPeriodic();showNotif(tr("nTestT"),tr("nTestB"))}toast(tr(on?"nOnT":"nOffT"))}
+  if(Notification.permission==="granted"){go(!notifOn());return}
+  Notification.requestPermission().then(function(p){if(p==="granted")go(true);else{notUI();toast(tr("nDen"),"err",6000)}})}
+function openN(){alerts();$("nm").classList.add("open")}function closeN(){$("nm").classList.remove("open")}
+$("bell").onclick=$("nAlert").onclick=openN;$("nClose").onclick=closeN;$("nm").onclick=function(e){if(e.target===$("nm"))closeN()};
+$("nEnable").onclick=$("stNot").onclick=enableNot;$("attn").onclick=function(e){if(e.target.id==="aAll")openN()};
+$("nList").onclick=function(){$("itemsHd").scrollIntoView({behavior:"smooth",block:"start"})};
+setInterval(function(){notifyCheck();alerts()},36e5);
+
+/* ---------- Home + Medical Store mode and scan helpers ---------- */
+var usageMode="home",scanStream=null,scanLoop=null,scanDetector=null;
+try{usageMode=localStorage.getItem("expiry-usage-mode")||"home"}catch(e){}
+function setUsageMode(m){usageMode=m;document.body.classList.toggle("medical-mode",m==="medical");$("homeMode").classList.toggle("mode-on",m==="home");$("medMode").classList.toggle("mode-on",m==="medical");try{localStorage.setItem("expiry-usage-mode",m)}catch(e){};var labels=document.querySelectorAll("[data-mode-hi]");labels.forEach(function(el){el.textContent=lang==="hi"?el.getAttribute("data-mode-hi"):(el.parentElement.id==="homeMode"?"Home":"Medical Store")});$("scanBtn").title=lang==="hi"?"बारकोड स्कैन या OCR":"Barcode scan or OCR"}
+$("homeMode").onclick=function(){setUsageMode("home")};$("medMode").onclick=function(){setUsageMode("medical")};
+function openScan(){closeM();$("scanModal").classList.add("open");switchScanTab("barcode")}
+function closeScan(){stopScan();$("scanModal").classList.remove("open")}
+function switchScanTab(which){$("barcodePanel").hidden=which!=="barcode";$("ocrPanel").hidden=which!=="ocr";$("barcodeTab").className=which==="barcode"?"btn":"ghost";$("ocrTab").className=which==="ocr"?"btn":"ghost";if(which!=="barcode")stopScan()}
+$("scanBtn").onclick=openScan;$("scanClose").onclick=closeScan;$("scanModal").onclick=function(e){if(e.target===$("scanModal"))closeScan()};$("barcodeTab").onclick=function(){switchScanTab("barcode")};$("ocrTab").onclick=function(){switchScanTab("ocr")};
+function useScannedBarcode(code){code=String(code||"").trim();if(!code)return;closeScan();openM();$("barcode").value=code;$("scanNote").hidden=false;$("scanNote").textContent=(lang==="hi"?"बारकोड मिला: ":"Barcode detected: ")+code+(lang==="hi"?"। उत्पाद/एक्सपायरी अपने पैक से सत्यापित करें।":". Verify product and expiry from the package.");}
+$("useBarcode").onclick=function(){useScannedBarcode($("manualBarcode").value)};
+async function startScan(){
+ if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){$("scanHelp").textContent="इस ब्राउज़र में कैमरा उपलब्ध नहीं है। HTTPS/Chrome पर कोशिश करें या कोड हाथ से लिखें।";return}
+ if(!("BarcodeDetector" in window)){ $("scanHelp").textContent="इस ब्राउज़र में built-in barcode detection उपलब्ध नहीं है। कोड हाथ से लिखें या समर्थित Chrome/Android पर कोशिश करें।";return}
+ try{scanDetector=new BarcodeDetector({formats:["ean_13","ean_8","upc_a","upc_e","code_128","code_39","qr_code","itf","data_matrix"]});scanStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}},audio:false});$("scanVideo").srcObject=scanStream;$("scanVideo").style.display="block";await $("scanVideo").play();$("startScan").hidden=true;$("stopScan").hidden=false;$("scanHelp").textContent="बारकोड को फ्रेम के बीच में रखें।";scanLoop=setInterval(async function(){try{var codes=await scanDetector.detect($("scanVideo"));if(codes&&codes.length){useScannedBarcode(codes[0].rawValue)}}catch(e){}},350)}catch(e){$("scanHelp").textContent="कैमरा नहीं खुला: permission दें और HTTPS साइट पर खोलें।";stopScan()}}
+function stopScan(){if(scanLoop){clearInterval(scanLoop);scanLoop=null}if(scanStream){scanStream.getTracks().forEach(function(t){t.stop()});scanStream=null}if($("scanVideo")){$("scanVideo").pause();$("scanVideo").srcObject=null;$("scanVideo").style.display="none"}if($("startScan"))$("startScan").hidden=false;if($("stopScan"))$("stopScan").hidden=true}
+$("startScan").onclick=startScan;$("stopScan").onclick=stopScan;
+$("runOcr").onclick=async function(){var f=$("ocrFile").files&&$("ocrFile").files[0];if(!f){$("ocrStatus").textContent="पहले फोटो चुनें।";return}$("ocrStatus").textContent="OCR लाइब्रेरी लोड हो रही है…";try{if(!window.Tesseract){await new Promise(function(resolve,reject){var sc=document.createElement("script");sc.src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js";sc.onload=resolve;sc.onerror=reject;document.head.appendChild(sc)})}$("ocrStatus").textContent="फोटो पढ़ रहे हैं… इसमें कुछ समय लग सकता है।";var result=await Tesseract.recognize(f,lang==="hi"?"eng":"eng",{logger:function(m){if(m.status==="recognizing text")$("ocrStatus").textContent="Reading… "+Math.round((m.progress||0)*100)+"%"}});$("ocrText").value=(result.data&&result.data.text)||"";$("ocrStatus").textContent="हो गया। नीचे टेक्स्ट देखें, फिर फॉर्म में भरें।"}catch(e){$("ocrStatus").textContent="OCR नहीं चल सका। इंटरनेट कनेक्शन जाँचें या नाम/तारीख हाथ से भरें।"}};
+function parseExpiry(text){var t=String(text||"");var patterns=[/(\b\d{1,2}[\/.-]\d{1,2}[\/.-]\d{2,4}\b)/,/(\b\d{1,2}[\/.-]\d{4}\b)/,/(\b(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[ -]?\d{2,4}\b)/i];for(var p of patterns){var m=t.match(p);if(m){var v=m[1],d=null;if(/^\d{1,2}[\/.-]\d{4}$/.test(v)){var a=v.split(/[\/.-]/);d=new Date(Number(a[1]),Number(a[0]),0)}else if(/^\d{1,2}[\/.-]\d{1,2}/.test(v)){var a=v.split(/[\/.-]/);var y=Number(a[2]);if(y<100)y+=2000;d=new Date(y,Number(a[1])-1,Number(a[0]))}else{d=new Date("1 "+v)}if(d&&!isNaN(d.getTime()))return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}}return ""}
+$("applyOcr").onclick=function(){var txt=$("ocrText").value.trim();if(!txt){$("ocrStatus").textContent="पहले OCR टेक्स्ट निकालें या टाइप करें।";return}var lines=txt.split(/\n+/).map(function(x){return x.trim()}).filter(Boolean);closeScan();openM();var date=parseExpiry(txt);var skip=/^(exp|expiry|use before|best before|mfg|manufact|batch|lot|mrp|price|net qty)/i;var candidate=lines.find(function(l){return l.length>3&&!skip.test(l)&&!parseExpiry(l)&&!/\d{8,}/.test(l)});if(candidate&&!$("name").value)$("name").value=candidate.slice(0,100);if(date)$("date").value=date;$("scanNote").hidden=false;$("scanNote").textContent="OCR से अनुमानित जानकारी भरी गई है। नाम और expiry date को पैक से मिलाकर जाँचें; फिर Save करें."};
+setUsageMode(usageMode);
+
+applyLang();instUI();notUI();regPeriodic();boot();
 </script>
 </body>
 </html>
